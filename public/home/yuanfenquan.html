@@ -1,0 +1,469 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="北京交友,上海交友,深圳交友,重庆交友,天津交友,长沙交友,河北交友,河南交友,山西交友,江苏交友,浙江交友,四川交友,云南交友,山东交友,湖南交友,同城交友,全国婚恋交友,网上交友,交友征婚,离异征婚,离异交友,交友照片,同城交友,同城相亲,缘分圈交友,缘分圈,世纪佳缘交友网" />
+    <meta name="Description" content="世纪佳缘交友征婚,恋爱相处,相亲约会,结婚问题,单身吐槽,缘分,北京交友,上海交友,深圳交友,重庆交友,天津交友,长沙交友,河北交友,河南交友,山西交友,江苏交友,浙江交友,四川交友,云南交友,山东交友,湖南交友,同城婚恋交友,全国婚恋交友,网上交友,交友征婚,离异征婚,离异交友,同城交友,同城相亲,缘分圈交友,婚恋交友一站式服务,想在同城寻找合适的伴侣,征婚交友请选择世纪佳缘" />
+    <title>交友_缘分圈_世纪佳缘交友网</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css"/>
+    <link rel="stylesheet" href="./css/circle.css"/>
+    <script src="./js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="./js/public.js" type="text/javascript"></script>
+    <script src="./js/autocomplete.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./js/personInfo.js"></script>
+    <script src="./js/get_topic_list.js" type="text/javascript"></script>
+    <script src="./js/pv.js" type="text/javascript"></script>
+</head>
+<body>
+     <!--导航-->
+    <script>
+    $(document).ready(function(){
+	send_jy_pv2('|1021347_0|'+'135859241');
+	})
+</script>
+ <!--公共头-->
+    <script type="text/javascript" src="./js/head_white.js"></script>
+    <!--Banner-->
+    <div class="banner-wrap">
+        <div class="banner">
+            <a class="topic-btn" href="/topic_publish.php" target="_blank">发布新话题</a>
+        </div>
+    </div>
+ <!--导航-->
+    <div class="global-nav">
+        <div class="w690 fl">
+            <ul class="gn-nav">
+                <li ><a href="/index.php" onmousedown="send_jy_pv2('|1021347_32|'+'135859241');">首页</a></li>
+                <li ><a href="/attention.php" onmousedown="send_jy_pv2('|1021347_34|'+'135859241');">关注</a></li>
+                <li  class="active"><a href="/show.php" onmousedown="send_jy_pv2('|1021347_36|'+'135859241');">发现</a></li>
+		<li><a class="fate-lab" href="http://www.jiayuan.com/usercp/insurance/" target="_blank" onmousedown="send_jy_pv2('|1029798_0|'+'135859241');">恋爱宝</a></li>
+            </ul>
+            <div class="gn-search">
+                <input type="text" id="search_fate" value="搜索话题或者标签" class="gn-input" /><a class="gl-icon gn-sec-icon" onclick="sub_search()" title="搜索" href="javascript:;">搜索</a>
+                <div style="display: none;" class="search_select">
+		
+		</div>
+            </div>
+	    
+        </div>
+	<script>
+	    //在搜索框输入搜索内容时  显示搜索提示框
+$('#search_fate').autocomplete('/ajax/get_search_result.php',{
+	autoType:1,
+	minChars:1,
+	resultsClass:"search_select", 
+	multiple: true,
+	dataType: "json"
+})
+	</script>
+        <div class="gn-set">
+            <div class="gn-set-list gn-msg-wrap">
+                <a id="un_read_msg" href="/message.php" onmousedown="send_jy_pv2('|1021347_40|'+'135859241');"><em class="gl-icon msg-num" style="display:none;"></em><i class="gl-icon msg"></i>消息</a>
+		<div class="news-box fn-hide">
+		    
+			<img src="./img/individual_sprite.png" class="nb-top-tag">
+		    <ul class="nb-ul"> 
+	    
+		    </ul>
+		    <a href="/message.php" onmousedown="send_jy_pv2('|1021347_40|'+'135859241');" class="nb-more">查看全部</a>
+		</div>
+            </div>
+	    
+            <div class="gn-set-list">
+		
+                <a href="/myfate.php" onmousedown="send_jy_pv2('|1021347_38|'+'135859241');"><i class="gl-icon user"></i>我的</a>
+            </div>
+        </div>
+    </div>
+    	<script>
+	    //鼠标移入 移出 导航消息按钮
+	    $('.gn-set-list:eq(0)').mouseenter(function(){
+		    get_unread_msg_content();
+	    }).mouseleave(function(){
+		    //setTimeout(function(){
+			$('.news-box').addClass('fn-hide');
+		    //}, 1000);
+	    })
+	</script>
+       <!--导航-->
+ <div class="cut-sure" id="j_tishi" style="display:none;">
+    <div class="cs-bg0"></div>
+    <div class="cs-content">
+	<a onclick="jy_head_function.lbg_hide('tishi');" class="cs-close fr" id="tishi_close_href"></a>
+	<p class="cc-title">确定删除这个话题吗？</p>
+	<p class="cc-tishi">提示：删除后不能恢复哦！</p>
+	<p class="cc-sure">
+	    <a class="rb-tosend fl" id="tishi_sure">确定</a><a id="tishi_cancel" onclick="jy_head_function.lbg_hide('tishi');" style="cursor:pointer;" class="cc-quxiao">取消</a>
+	</p>
+    </div>
+</div>    <!--导航-->
+    <!--发现全部-->
+    <div class="con-wrap find-ad-wrap">
+        <!--发现导航-->
+        <div class="con-nav">
+            <ul class="con-nav-list">
+                <li><a href="/show.php?type=list_all" class="cn-a-active" onmousedown="send_jy_pv2('|show_all_num|');">全部</a></li>
+                <li><a href="/show.php?type=lists_marrow"  onmousedown="send_jy_pv2('|show_jinghua_num|');">精华推荐</a></li>
+                <li><a href="/show.php?type=list_week"  onmousedown="send_jy_pv2('|show_hot_num|');">本周热议</a></li>
+            </ul>
+            <a class="unfold fn-hide"  onclick="show_hide_class()">收起<i></i></a>
+	    <a class="tofold fn-hide"  onclick="show_hide_class()">展开<i></i></a>
+        </div>
+	        <!--图片列表-->
+        <div class="find-ad-list">
+            <ul class="fn-clear">
+		                <li  id="tag_show_z_k_1"><a href="/show.php?type=list_all&id=1"  onmousedown="send_jy_pv2('|show_pic1_num|');">恋爱相处</a></li>
+                                <li  id="tag_show_z_k_2"><a href="/show.php?type=list_all&id=2"  onmousedown="send_jy_pv2('|show_pic2_num|');">相亲约会</a></li>
+                                <li  id="tag_show_z_k_3"><a href="/show.php?type=list_all&id=3"  onmousedown="send_jy_pv2('|show_pic3_num|');">择偶匹配</a></li>
+                                <li  id="tag_show_z_k_4"><a href="/show.php?type=list_all&id=4"  onmousedown="send_jy_pv2('|show_pic4_num|');">结婚问题</a></li>
+                                <li  id="tag_show_z_k_5"><a href="/show.php?type=list_all&id=5"  onmousedown="send_jy_pv2('|show_pic5_num|');">单身吐槽</a></li>
+                                <li  id="tag_show_z_k_6"><a href="/show.php?type=list_all&id=6"  onmousedown="send_jy_pv2('|show_pic6_num|');">人群</a></li>
+                                <li  id="tag_show_z_k_7"><a href="/show.php?type=list_all&id=7"  onmousedown="send_jy_pv2('|show_pic7_num|');">XXOO</a></li>
+                                <li  id="tag_show_z_k_8"><a href="/show.php?type=list_all&id=8"  onmousedown="send_jy_pv2('|show_pic8_num|');">缘分</a></li>
+                                <li  id="tag_show_z_k_99"><a href="/show.php?type=list_all&id=99"  onmousedown="send_jy_pv2('|show_pic99_num|');">活动</a></li>
+                            </ul>
+        </div>
+	    </div>
+    <script>
+	//点击收起 打开 隐藏显示分类
+	function show_hide_class()
+	{
+	    if ($('.find-ad-list').hasClass('fn-hide')) {
+		$('.find-ad-list').removeClass('fn-hide');
+		$('.unfold').removeClass('fn-hide');
+		$('.tofold').addClass('fn-hide');
+	    }
+	    else
+	    {
+		$('.find-ad-list').addClass('fn-hide');
+		$('.unfold').addClass('fn-hide');
+		$('.tofold').removeClass('fn-hide');
+	    }
+	}
+    </script>
+    <!--主体-->
+    <div class="con-wrap fn-clear">
+        <div class="fl con-left">
+	            <!--发现标签-->
+	    		    <!--详细列表开始-->
+            <div class="con-detail">
+				    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=da89697ed7ad4166eee82d1fd1aa1387" class="user-photo40"><img src="./img/da7e69add_1_avatar_s.jpg" alt=""/><span class="bg-radius40" id="da89697ed7ad4166eee82d1fd1aa1387_0_0"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=466077" target="_blank">寻找爱情，完善自我。</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=466077" target="_blank">我很平凡，有点小女人，有点小自卑。年轻时，心比天高，随着年龄的增长，一切的幻想都被现实所击破，终于活的明白。知天命，无所求，一切心如止水，与世无...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-09-02 23:14</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=466077" target="_blank" class="h-focus">370</a></li><li><a href="/topic_detail.php?id=466077" target="_blank" class="h-ping">32</a></li></ul>
+			    </div></div></div>
+			 		    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=fc7868c792f459e1ada60c7dc8ed662c" class="user-photo40"><img src="./img/fcc768f49_2_avatar_s.jpg" alt=""/><span class="bg-radius40" id="fc7868c792f459e1ada60c7dc8ed662c_0_1"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=466399" target="_blank">单身心情</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=466399" target="_blank">有一道题本就无解，无论你怎么想、怎么难过，你不吃不喝也不睡、不想面对……可是，天依然会亮，太阳照旧从东方升起，从不会因为谁的心情而缺席。你还要打...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    	
+				<ul class="u-photo fn-clear">
+								    <li><a href="/topic_detail.php?id=466399" target="_blank"><img src="./img/fate_160904081555340t.jpg" alt="" onload="cutImage($(this), 100, 100);"/></a></li>
+								</ul>
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-09-04 08:39</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=466399" target="_blank" class="h-focus">234</a></li><li><a href="/topic_detail.php?id=466399" target="_blank" class="h-ping">14</a></li></ul>
+			    </div></div></div>
+			 		    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=baffd81146018caf680214827370a576" class="user-photo40"><img src="./img/ba11d8014_1_avatar_s.jpg" alt=""/><span class="bg-radius40" id="baffd81146018caf680214827370a576_0_2"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=466138" target="_blank">结了婚为什么还在佳缘流连？为了什么呢？</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=466138" target="_blank">最近无意当中看见帖子里有很多自称已经在佳缘找到了对象并且结婚的人。都说自己过得很幸福。可是，为什么都结了婚了，还要在这里流连忘返呢？？？我相信真...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-09-03 08:34</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=466138" target="_blank" class="h-focus">802</a></li><li><a href="/topic_detail.php?id=466138" target="_blank" class="h-ping">39</a></li></ul>
+			    </div></div></div>
+			 		    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=8857dfb423315e502c4a2a2e30d1ce51" class="user-photo40"><img src="./img/88b4df312_1_avatar_s.jpg" alt=""/><span class="bg-radius40" id="8857dfb423315e502c4a2a2e30d1ce51_0_3"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=466473" target="_blank">网络大战究竟谁赢了？</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=466473" target="_blank">网络骂战已不是什么新鲜事儿。观点不同，本属自然，想说就说，想听就听，不说不听，也悉听尊便，这就是自由的网络，颇具影响力的网络骂战当属崔、方大战了...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-09-04 13:13</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=466473" target="_blank" class="h-focus">43</a></li><li><a href="/topic_detail.php?id=466473" target="_blank" class="h-ping">3</a></li></ul>
+			    </div></div></div>
+			 		    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=415769cabfd62501181cdd515248204f" class="user-photo40"><img src="./img/41ca69d6b_3_avatar_s.jpg" alt=""/><span class="bg-radius40" id="415769cabfd62501181cdd515248204f_0_4"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=462952" target="_blank">1950~1965出生的人！古往没有过，今后不再有！转~~</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=462952" target="_blank">现如今，咱中国，有群人，很特别。可以说：古往没有过，今后不再有。1950年~1965年出生的所有50后及部分60后，是全世界最不寻常、最折腾、也是最乐观的一...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    	
+				<ul class="u-photo fn-clear">
+								    <li><a href="/topic_detail.php?id=462952" target="_blank"><img src="./img/fate_160824213317381t.jpg" alt="" onload="cutImage($(this), 100, 100);"/></a></li>
+								    <li><a href="/topic_detail.php?id=462952" target="_blank"><img src="./img/fate_160824213327861t.jpg" alt="" onload="cutImage($(this), 100, 100);"/></a></li>
+								</ul>
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-08-24 21:45</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=462952" target="_blank" class="h-focus">2432</a></li><li><a href="/topic_detail.php?id=462952" target="_blank" class="h-ping">114</a></li></ul>
+			    </div></div></div>
+			 		    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=1245b36364ba639e824a54469b0a17d1" class="user-photo40"><img src="./img/1263b3ba6_35_avatar_s.jpg" alt=""/><span class="bg-radius40" id="1245b36364ba639e824a54469b0a17d1_0_5"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=466219" target="_blank">男人千万不要和护士相亲结婚结婚</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=466219" target="_blank">我已经发布过一个帖子。说过相亲市场四大挑战职业。护士。教师。女公务员，银行女。最近我又去逛了逛某个专门探讨相亲的论坛。发现又有很多男人和护士相亲...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-09-03 14:46</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=466219" target="_blank" class="h-focus">666</a></li><li><a href="/topic_detail.php?id=466219" target="_blank" class="h-ping">31</a></li></ul>
+			    </div></div></div>
+			 		    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=76e74b77b23a35ed884531eba3bd4e26" class="user-photo40"><img src="./img/76774b3ab_6_avatar_s.jpg" alt=""/><span class="bg-radius40" id="76e74b77b23a35ed884531eba3bd4e26_0_6"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=466433" target="_blank">我眼中的缘分圈</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=466433" target="_blank">缘分圈里：50后不算老、60后精神好、70后有思想、80后爱情浓、90后青春旺。大家一起踏上缘分之路，你累我扶、你哭我陪；姐妹成群、兄弟并肩；网红萌萌哒、...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    	
+				<ul class="u-photo fn-clear">
+								    <li><a href="/topic_detail.php?id=466433" target="_blank"><img src="./img/fate_160904105753824t.jpg" alt="" onload="cutImage($(this), 100, 100);"/></a></li>
+								</ul>
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-09-04 11:01</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=466433" target="_blank" class="h-focus">105</a></li><li><a href="/topic_detail.php?id=466433" target="_blank" class="h-ping">11</a></li></ul>
+			    </div></div></div>
+			 		    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=11d3a3a947ed38abc3cedc115075e9a7" class="user-photo40"><img src="./img/11a9a3ed4_5_avatar_s.jpg" alt=""/><span class="bg-radius40" id="11d3a3a947ed38abc3cedc115075e9a7_0_7"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=466407" target="_blank">艺术的天秤</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=466407" target="_blank">秋已至，最晚睡下，席子不须风扇的摇摆，已令身体舒凉。只是功课催紧，人如何能入静？有如孩童，借助条枝的遒劲，散乱了地上的布局。又如不知倦懈的粗指，...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-09-04 09:12</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=466407" target="_blank" class="h-focus">46</a></li><li><a href="/topic_detail.php?id=466407" target="_blank" class="h-ping">5</a></li></ul>
+			    </div></div></div>
+			 		    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=8323d46389657332ab98dec6e07606bf" class="user-photo40"><img src="./img/8363d4658_1_avatar_s.jpg" alt=""/><span class="bg-radius40" id="8323d46389657332ab98dec6e07606bf_0_8"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=466377" target="_blank">诗词对句 4——紫藤听雨</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=466377" target="_blank">喜欢的对，不喜欢的路过上句：草枯花红催人老下句：      附照片征婚，中秋节找寻个网上情人也好啊 蓝衣服的后面站着孩子了，绿衣服的旁边是俺姐姐。所以...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    	
+				<ul class="u-photo fn-clear">
+								    <li><a href="/topic_detail.php?id=466377" target="_blank"><img src="./img/fate_160904011405846t.jpg" alt="" onload="cutImage($(this), 100, 100);"/></a></li>
+								    <li><a href="/topic_detail.php?id=466377" target="_blank"><img src="./img/fate_160904011420820t.jpg" alt="" onload="cutImage($(this), 100, 100);"/></a></li>
+								</ul>
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-09-04 01:17</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=466377" target="_blank" class="h-focus">306</a></li><li><a href="/topic_detail.php?id=466377" target="_blank" class="h-ping">29</a></li></ul>
+			    </div></div></div>
+			 		    <div class="topic-box">
+			<div class="user-pic">
+			    <a href="/myfate.php?hash=8323d46389657332ab98dec6e07606bf" class="user-photo40"><img src="./img/8363d4658_1_avatar_s.jpg" alt=""/><span class="bg-radius40" id="8323d46389657332ab98dec6e07606bf_0_9"></span></a>
+			    <div class="u-detail fn-hide"></div>
+			</div>
+			<div class="user-con">
+			    <h3 class="u-question fn-clear">
+				<a href="/topic_detail.php?id=466408" target="_blank">三上三下 逃跑主义的帖子 放在俺的——吧 里了</a>
+				<!--如果是精华-->
+								<!--如果是置顶-->
+							    </h3>
+			    <p class="u-answer"><a href="/topic_detail.php?id=466408" target="_blank">最后一次（可能还不是最后一次）发布，就选了一个标签，就是不想让损俺主帖的人看到。躲着——绕着！！这损子 若损起人来可以从任何一处下手，形象地描绘...</a></p>
+			    <!--如果返回的话题分类是PK话题-->
+			    			    <!--如果话题中有图片-->
+			    			    <div class="u-handle">
+			    <p class="h-time">发布于 <span>2016-09-04 09:40</span></p>
+			    <ul class="h-list"><li><a href="/topic_detail.php?id=466408" target="_blank" class="h-focus">111</a></li><li><a href="/topic_detail.php?id=466408" target="_blank" class="h-ping">8</a></li></ul>
+			    </div></div></div>
+			             </div>
+	    <!--详细列表结束-->
+	                <!--翻页开始-->
+            <div class="turn-page">
+                <a href="/show.php?type=list_all&p=1" class="visited">1</a><a href="/show.php?type=list_all&p=2" class="">2</a><a href="/show.php?type=list_all&p=3" class="">3</a><a href="/show.php?type=list_all&p=4" class="">4</a><a href="/show.php?type=list_all&p=5" class="">5</a><a href="/show.php?type=list_all&p=6" class="">6</a><a href="/show.php?type=list_all&p=7" class="">7</a><span class="point">...</span><a href="/show.php?type=list_all&p=100" class="">100</a><a href="/show.php?type=list_all&p=2" class="result_page pr nextpage_w"><em class="nextpage_next_ico"></em>下一页&nbsp;</a>
+            </div>
+	    <!--翻页结束-->
+	            </div>
+    <script>
+$(document).ready(function(){
+   send_jy_pv2('|1021347_28|'+'135859241');
+   if(''){
+   get_uid_from_tag('','');
+   }
+   get_hot_tags();
+    })	  
+    </script>
+        <div class="con-right fl">
+	    <div class="cr-box" id="show_tags">
+	   
+	    </div>
+           
+        </div>
+    </div>
+    <div class="html-tool" id="goTop">
+        	<a href="/topic_publish.php" title="发布话题" target="_blank"><img src="./img/tool-talk.jpg" /></a>
+        	<a href="javascript:;" onclick="jy_head_function.lbg_show('right_alert_2');" title="意见反馈"><img src="./img/tool-ask.jpg" /></a>
+        	<a href="javascript:;" id="backTop" title="返回顶部" class="backTop"><img src="./img/tool-totop.jpg" /></a>
+        </div>
+<div id="right_alert_2" style="display:none">
+    <div class="alert_c">
+	    <div class="alert_cont">
+	    <div class="fn-clear">
+		    <h2 class="zs_title">有了您的建议，世纪佳缘才能更好！</h2><a href="javascript:;" onclick="jy_head_function.lbg_hide('right_alert_2');" class="closer">关闭</a>
+	    </div>
+	    <p>若您需要解决产品使用的问题，请联系在线服务</p>
+	    <p><input type="text" name="sug_title" id="sug_title" class="jybt text_color" value="建议标题" onfocus="if(this.value=='建议标题') this.value='';"   /></p>
+	    <textarea name="sug_cont" id="sug_cont" cols="" rows="" class="jy_cont text_color" onfocus="write_sug()" >
+    亲爱的世纪佳缘会员：
+    我们会每天关注您的建议并提供反馈，不断优化产品，为您更好的服务。
+    请留下您详细的建议，谢谢。
+	    </textarea>
+	    <div class="jy_btn">
+		    <div class="jy_img"></div>
+		<a class="jy_btn" onclick="submit_sug();">确定</a>
+	    </div>
+	</div>
+    </div>
+</div>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="http://images2.jyimg.com/w4/profile_new/j/dd_belatedpng.js"></script>
+<script>
+    DD_belatedPNG.fix('.h-focus, .h-ping, .icon, .sc-p-zan, .sc-p-yizan, .sc-p-ping, .do-t-hui, .discus-zhuan, .bg-radius40, .bg-radius25, .bg-radius25grey, .dz-spanbg, .dr-spanbg, .tool-face, .tool-img, .ss-public, .cs-close, .nt-guifan, .ct-seled, .arrowBg, .publishInputClose, .uploadPhotoClose, .arrowBg, .md-zan, .nt-guifan span, .st-label .fndl-title i, .find-ad-list li.active i, .ct-box i, .my-circle .gz span, .my-circle ul, .gl-icon, .yiguanzhu-btn,.do-reply-one dt .bg-radius25,.find-ad-list li a'); 
+</script>
+<![endif]-->
+<script>
+
+var sub_ques_title = '';
+var sub_ques_content = '';
+$(document).ready(function(){
+    sub_ques_title = $.trim($('#sug_title').val());
+    sub_ques_content = $.trim($('#sug_cont').val());
+    
+    });
+function write_sug()
+{
+    if($.trim($('#sug_cont').val()) == sub_ques_content )
+    {
+	$('#sug_cont').val('');
+    }	
+}
+//隐藏意见反馈
+function hide_sub_ques(type,id,obj) {
+    jy_head_function.lbg_hide('right_alert_2');
+}
+function show_sub_ques()
+{
+    jy_head_function.lbg_show('right_alert_2');
+}
+function submit_sug(){
+    var sug_title = $.trim($('#sug_title').val());
+    var sug_content = $.trim($('#sug_cont').val());
+    if(!sug_title || sug_title == '' || sug_title == sub_ques_title)
+    {
+	tishi(1,show_sub_ques,'提交失败！','提示：提交失败，请输入标题后再提交！');
+	return false;
+    }
+    if(!sug_content || sug_content == '' || sug_content == sub_ques_content)
+    {
+	tishi(1,show_sub_ques,'提交失败！','提示：提交失败，请输入内容后再提交！');
+	return false;
+    }
+    $.ajax({
+	    url: '/usercp/dynmatch/ajax/user_sug.php',
+	    type: 'POST',
+	    data: {'content':sug_content,'title':sug_title},
+	    timeout: 5000,
+	    error: function(){
+		tishi(0,'','提交失败！','提示：提交失败，服务繁忙，请重试！');
+	    },
+	    success: function(data){
+		    if(data == 1){
+			     tishi(0,'','提交成功！','提示：提交成功！');
+		    }else if(data == -2){
+			    tishi(0,'','提交失败！','提示：提交失败，请输入标题后再提交！');
+		    }else if(data == -3){
+			     tishi(0,'','提交失败！','提示：提交失败，请输入内容后再提交！');
+		    }else{
+			     tishi(0,'','提交失败！','提示：提交失败，服务繁忙，请重试！');
+		    }
+	    }
+    });
+}
+</script>    <!--右侧图标--> 
+    <!--公共尾-->
+    <script type="text/javascript" src="./js/w4-simple.js"></script>
+
+   
+</body>
+</html>

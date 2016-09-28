@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="交友,交友网,征婚交友,网上交友,征婚,征婚网,征婚交友网,交友中心,婚恋交友" />
+    <meta name="description" content="青春不常在，抓紧谈恋爱！缘分可遇也可求，该出手时就出手。世纪佳缘是严肃婚恋的交友平台，提供丰富多彩的交友征婚活动，1.7亿会员，让缘分千万里挑一！" />
+    <title>佳缘登录页_世纪佳缘交友网</title>
+    <link rel="stylesheet" href="./css/base.css"/>
+    <link rel="stylesheet" href="./css/login.css"/>
+    <script type="text/javascript" src="http://images1.jyimg.com/js/header/head_common.js"></script>
+    <style type="text/css">
+    .main{background-image:url(./img/nv_1.jpg)}
+    
+  </style>
+  </head>
+  <body onload="onloadPage();" onkeydown="bindEnter(event)">
+    <iframe src="javascript:false;" name="login_run" width=0 height=0 style="display:none;"></iframe>
+    <div id="wrapper" class="wrapper">
+      <div id="header" class="header">
+        <div class="w fn-clear">
+          <h1 class="logo">
+           <script type="text/javascript">
+            document.write('<a class="logo" href="http://www.jiayuan.com/" onmousedown="javascript:send_jy_pv2(\'log_m_to_jy\');" ><img height="70" src="./img/logo_1441767055.jpeg" alt="世纪佳缘" border="0" /></a>');
+          </script>
+            <span><img src="./img/logo_txt.png" alt="严肃婚恋网站"/></span>
+          </h1>
+        </div>
+      </div>
+      <div id="main" class="main">
+        <div class="w fn-clear">
+			<div id="loginForm" class="loginForm tab-wrap">
+				<ul class="loginTit tab-list fn-clear">
+					<li class="default" id='password_login'>会员登录</li>
+					<li style='display:none;' id="quick_login_btn">快速登录</li>
+				</ul>
+            <div class="loginInner">
+              <div class="loginFalse" id="errorInfo" style="display: none;">
+                <p id="errorInfop">
+                  <!-- <span class="f_red">登录失败！</span>您的密码过于简单，请登录后<a href="###">修改密码</a> -->
+                  
+                </p>
+              </div>
+                <div class="tab-cent" id="login_form">
+              <form name="login" id="login" method="post" action="https://passport.jiayuan.com/dologin.php?pre_url=http://www.jiayuan.com/usercp/" target="login_run">
+                <div class="login_zh fn-clear">
+                  <label class="lab">登录帐号</label>
+                  <div class="login_inpBox">
+                    <label for="login_email" class="login_label">邮箱/ID/手机号</label>
+                    <input class="text" name="name" type="text" id="login_email" onfocus="clear_text(this);this.style.imeMode='disabled';" onblur="check_text(this);"  value="13722380324">
+                    <span class="btnDel" id="btn_del" href="" onclick="delLoginMsg();" title="删除">删除</span>
+                  </div>
+                </div>
+                <div class="login_mm fn-clear mT10">
+                  <label class="lab">密<i class="f_white">密码</i>码</label>
+                  <div class="login_inpBox">
+                    <label for="login_password" class="login_label">密码</label>
+                    <input class="text" type="password" name="password" autocomplete="off"  id="login_password" autocomplete="off">
+                  </div>
+                </div>
+                                <p class="loginSelf mT10">
+                  <input type="checkbox" name="remem_pass" checked id="check_save" onclick="saveName(this);" />
+                  <label><span>两周内自动登录</span></label>
+                </p>
+                <div class="btnsBox">
+                  <a class="btnLogin" id="login_btn"  href="javascript:void(0);" onclick="send_jy_pv2('log_main_btn_c');mysub();">登&nbsp;录</a>
+                  <a class="forgMM" onmousedown="javascript:send_jy_pv2('log_m_forg_pass');" onclick='show_quick_login();' style='cursor:pointer;'>忘记密码</a>
+                </div>
+                <input type="hidden" name="_s_x_id" value="a55933fa763a863eb306de63ff6b1eaf"/>
+                <input type="hidden" name="ljg_login" value="1" />
+                <input type="hidden" name="m_p_l" value="1" />
+                <input type="hidden" name="channel" value="200" />
+                <input type="hidden" name="position" value="102" />
+              </form>
+					</div>
+					<div class="tab-cent fn-hide">
+						<form name="login_new" id="login_new" method="post" action="https://passport.jiayuan.com/dologin.php?pre_url=http://www.jiayuan.com/usercp/" target="login_run">
+							<div class="login_zh_o fn-clear" style="margin-top:37px;">
+								<label class="lab">手机号/邮箱</label>
+								<div class="login_inpBox">
+									<label for="login_quick" class="login_label">手机号/邮箱</label>
+									<input class="text" name="name" autocomplete="off" type="text" id="login_quick" onfocus="clear_text(this);this.style.imeMode='disabled';" onblur="check_text(this);">
+									<span class="btnDel" title="删除">删除</span>
+								</div>
+								<div class="login_codeBox fn-hide">
+									<a href="javascript:;" class="login_code_btn" id="get_mobile_code">获取验证码</a>
+								</div>
+							</div>
+							<div class="login_mm_o fn-clear mT10 fn-hide">
+								<label class="lab">验证码</label>
+								<div class="login_inpBox">
+									<label for="login_code" class="login_label">验证码</label>
+                                                                        <input id="login_code" name="login_mobile_code" autocomplete="off" type="text" value=""  class="te"/><span class="re" style="display: inline-block;"> </span>
+                                                                        
+								</div>
+							</div>
+							<div class="btnsBox">
+								<a class="btnLogin" style="display: none;" id="login_btn_new" href="javascript:void(0);" onclick="send_jy_pv2('log_quick_btn_c');mysub_new();">登&nbsp;录</a>
+								<a class="btnLogin" style="display: none;" id="send_email" href="javascript:void(0);" onclick="send_jy_pv2('send_emial_quick_btn_c');send_email();">发送邮件</a>
+							</div>
+                                                    <input type="hidden" name="sid" id="sid" value="71e57a" />
+						</form>
+					</div>
+              <div class="openId">
+                <p>
+                  <span class="lTit">其他帐号登录</span>
+                  <a class="openId_qq" href="http://www.jiayuan.com/general/t/?forward=qqAware&amp;c=12&amp;url=http://www.jiayuan.com/usercp&amp;p=1"><i class="icon_openId icon_qq"></i>QQ帐号</a>
+                  <a class="openId_sina" href="http://www.jiayuan.com/general/t/?forward=sinaAware&amp;c=12&amp;url=http://www.jiayuan.com/usercp&amp;p=2"><i class="icon_openId icon_sina"></i>新浪微博</a>
+                  <!--微信登录-->
+                  <a class="openId_wx" href="http://www.jiayuan.com/general/t/?forward=wxAware&amp;c=12&amp;url=http://www.jiayuan.com/usercp&amp;p=8"><i class="icon_openId icon_wx"></i>微信</a>
+                  <!--微信登录-->
+                </p>
+                <p class="mT5">
+                  <a class="openId_baidu" href="http://www.jiayuan.com/general/t/?forward=baiduOauth&amp;c=12&amp;url=http://www.jiayuan.com/usercp&amp;p=5" title="百度"><i class="icon_openId icon_baidu"></i><span>百度</span></a>
+                  <a class="openId_rr" href="http://www.jiayuan.com/general/t/?forward=renrenAware&amp;c=12&amp;url=http://www.jiayuan.com/usercp&amp;p=3" title="人人网"><i class="icon_openId icon_rr"></i><span>人人网</span></a>
+                  <!-- <a class="openId_db" href="http://www.jiayuan.com/general/t/?forward=doubanAware&amp;c=12&amp;url=http://www.jiayuan.com/usercp&amp;p=6" title="豆瓣"><i class="icon_openId icon_db"></i><span>豆瓣</span></a> -->
+                  <a class="openId_kxw" href="http://www.jiayuan.com/general/t/?forward=kaixinAware&amp;c=12&amp;url=http://www.jiayuan.com/usercp&amp;p=4" title="开心网"><i class="icon_openId icon_kxw"></i><span>开心网</span></a>
+                  <a class="openId_zfb" href="http://www.jiayuan.com/general/t/?forward=alipayOauth&amp;c=12&amp;url=http://www.jiayuan.com/usercp&amp;p=7" title="支付宝"><i class="icon_openId icon_zfb"></i><span>支付宝</span></a>
+                </p>
+              </div>
+              <p class="goReg">
+                <a href="http://reg.jiayuan.com/?bd=9527" onmousedown="javascript:send_jy_pv2('log_m_to_reg');" >还不是会员？立即注册</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer" class="footer w">
+        <div class="shareXF">
+          <a href="http://xingfu.jiayuan.com/" onmousedown="javascript:send_jy_pv2('log_m_to_xingfu');" target="_blank" >我已成功征友，我要晒幸福</a>
+        </div>
+        <script type="text/javascript" src="./js/w4-simple.js"></script>
+      </div>
+    </div>
+  </body>
+<script type="text/javascript">
+  var contextPath = "http://images1.jyimg.com/w4/login/";
+  function bindEnter(obj) {
+    if($('#login_form').css('display') == 'none'){
+        btn = document.getElementById("login_btn_new");
+    }else{
+    btn = document.getElementById("login_btn");
+    }
+    if(obj.keyCode == 13 || obj.which == 13){
+      btn.click();
+      btn.returnValue = false;
+    }
+  }
+  function delLoginMsg(){
+    var login_email = document.getElementById("login_email");
+    login_email.value = "";
+    check_text(login_email);
+  }
+  document.getElementById("login_email").onkeydown = function(e){
+    e = e || window.event;
+    if(e.keyCode == 9 || e.which == 9){
+      document.getElementById('btn_del').focus();
+    }
+    if((e.keyCode == 13 || e.which == 13) ){
+        stopBubble(e);
+        if(document.getElementById('login_email').value == ''){
+          show_msg('请输入用户名！');
+        }else{
+          setTimeout(function(){document.getElementById('login_password').focus();},100);
+        }
+    } 
+  }
+  function stopBubble(e) {
+      if (e && e.stopPropagation) {//非IE
+          e.stopPropagation();
+      }else {//IE
+          window.event.cancelBubble = true;
+      }
+  }
+  function get_code(){
+    document.getElementById('validate_img').src='/antispam_v2.php?v=2&rn='+Math.random().toString();
+  }
+</script>
+<script type="text/javascript" src="http://images1.jyimg.com/w4/common/j/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://images1.jyimg.com/w4/login/v2/j/login.js"></script>
+<script type="text/javascript" src="http://images1.jyimg.com/w4/global/j/pv.js"></script>
+<!--[if lte ie 6]>
+<script type="text/javascript"> $(function() {var w = $(window).width(); 
+  $(window).resize(function() {w = $(window).width(); wrapperMinWidth(); }); 
+  function wrapperMinWidth() {$('#wrapper').css('width', w <= 950 ? 950 : 'auto'); } wrapperMinWidth(); }) </script> 
+<![endif]-->
+<script type="text/javascript">
+
+    $(function(){
+            });
+</script>
+</html>

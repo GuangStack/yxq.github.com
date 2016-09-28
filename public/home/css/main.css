@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* 主体 */
+.date_banner { position: relative; z-index: 99; width: 100%; height: 460px; overflow: hidden; }
+.date_banner .banner_content li { width: 100%; height: 460px; z-index: 99; }
+.date_banner .banner_content li a { display: block; width: 100%; height: 460px; background-position: center; background-repeat: repeat-x; }
+.date_banner .banner_list { position: absolute; z-index: 999; left: 50%; bottom: 10px; line-height: 0; font-size: 0; }
+.date_banner .banner_list a { float: left; display: block; width: 12px; height: 12px; overflow: hidden; margin: 0 3px; background: url(../i/banner_icon.png) no-repeat 0 -102px; _background: url(../i/banner_icon.gif) no-repeat 0 -102px; text-indent: -99em; }
+.date_banner .banner_list a.cur { background-position: 0 -88px; }
+.date_banner .banner_btn a { position: absolute; top: 50%; z-index: 999; display: block; width: 46px; height: 86px; overflow: hidden; margin: -43px 0 0; background: url(../i/banner_icon.png) no-repeat 0 0; font: 60px/86px 'SimSun'; color: #ddd; text-align: center; text-decoration: none; -webkit-transition: all 0.3s ease; /* Safari 和 Chrome */ -moz-transition: all 0.3s ease; /* Firefox 4 */ -o-transition: all 0.3s ease; /* Opera */ transition: all 0.3s ease; }
+.date_banner .banner_btn a:hover { text-decoration: none; color: #fff; }
+.date_banner .banner_btn a.banner_prev { left: 0; }
+.date_banner .banner_btn a.banner_next { right: 0; }
+
+.date_title { height: 26px; margin-bottom: 20px; padding: 0 4px; border-left: 5px solid #5e93d0; font: 20px/26px 'Microsoft Yahei'; color: #333; *position: relative; }
+.date_title a { float: right; font-family: "SimSun"; font-size: 14px; color: #2c81d6; *position: absolute; *right: 0; }
+
+.date_act, .date_user { width: 1200px; margin: 0 auto; }
+
+.date_act { padding-top: 20px; }
+
+.act_list { margin-right: -30px; }
+
+.act_detail { float: left; width: 378px; height: 398px; overflow: hidden; margin: 0 30px 30px 0; border: 1px solid #d9d9d9; -webkit-transition: all 0.2s; /* Safari 和 Chrome */ -moz-transition: all 0.2s; /* Firefox 4 */ -ms-transition: all 0.2s; /* IE */ -o-transition: all 0.2s; /* Opera */ transition: all 0.2s; }
+.act_detail .act_img { width: 378px; height: 230px; overflow: hidden; }
+.act_detail .act_img img { display: block; width: 378px; height: 230px; }
+.act_detail h2 { padding: 12px 20px 0; line-height: 40px; border-top: 1px solid #d9d9d9; }
+.act_detail h2 span { float: left; width: 240px; font-family: "Microsoft Yahei"; font-size: 16px; color: #333; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.act_detail h2 em { float: right; font-family: "SimSun"; font-size: 12px; font-style: normal; color: #666; }
+.act_detail p { height: 36px; overflow: hidden; padding: 0 20px; font: 12px/18px 'SimSun'; color: #aaa; }
+.act_detail:hover { box-shadow: 0 0 8px #d6d6d6; }
+
+.act_btn { display: block; width: 220px; height: 34px; margin: 22px auto 0; background-color: #ff546a; font: 14px/34px 'Microsoft Yahei'; color: #fff; text-align: center; }
+.act_btn:hover { background-color: #ff2642; text-decoration: none; }
+
+.user_list { padding-bottom: 90px; }
+.user_list li { float: left; opacity: 0.8; filter: alpha(opacity=80); }
+.user_list li a { display: block; position: relative; width: 238px; height: 238px; overflow: hidden; border: 1px solid #fff; background: url(../img/loading.gif) no-repeat center; text-decoration: none; }
+.user_list li a:hover { text-decoration: none; }
+.user_list li img { position: absolute; }
+.user_list li p { position: absolute; z-index: 99; left: 0; bottom: -28px; width: 238px; height: 28px; font: 14px/28px 'Microsoft Yahei'; color: #fff; text-align: center; background: url(../i/user_list_bg.png) repeat-x; text-decoration: none; cursor: pointer; }

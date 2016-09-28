@@ -1,0 +1,32 @@
+.nav-wrap{height:60px;background:#942da7 no-repeat center center;width: 100%;}
+/*.nav-wrap-fixed {position: fixed;_position: absolute;top: 0;z-index:100002;_top:expression(eval(document.documentElement.scrollTop));}*/
+.nav-mod{width:970px;margin:0 auto;}
+.nav-title{margin-right:28px;float:left;height:60px;}
+.nav-title strong{display:inline-block;background:url(../i/nav_logo.png) no-repeat -17px -6px ;line-height:60px; font-size: 28px;color:#fff; overflow:hidden;width:292px;height:60px;font-family: 'Microsoft Yahei','宋体';}
+.nav-list{float:left;height:60px;line-height:60px;}
+.nav-list li{float:left; line-height:normal;position:relative;z-index:99;height:60px; line-height: 60px; font-family: 'Microsoft Yahei','宋体';}
+.nav-list li.active a{background-color:#6f0782;color:#fff;text-decoration:none;}
+.nav-list li.bg-none,.nav-list li.bg-none .nav-list-item-f{ width:80px;padding:0; text-align: center;}
+
+.nav-list-item,.nav-list-item-f{font-size:14px;color:#fff;display:inline-block; height:60px;padding:0 18px;position:relative;transition: all .5s;}
+.nav-list-item-f{}
+.nav-list-item-f a{color:#fff;}
+.nav-list-item-f a:hover{text-decoration: none;color:#f4b6ff;}
+.on a{ color:#f4b6ff;}
+.nav-list-item:hover,.on{color:#f4b6ff;text-decoration:none;}
+.tarr{background:url(../i/nav_tarr.gif) no-repeat 0 0;width:9px;height:6px; overflow: hidden; display:inline-block;vertical-align:middle; font-size:0;margin-left:3px;}
+.on .tarr{ background-position: 0 -7px;}
+.tarr-select{display:none;position: absolute;left:50%;bottom:0;_bottom:-1px;margin-left:-5px;background:url(../i/nav_tarr.gif) no-repeat 0 -10px;width:11px;height:6px;font-size:0;}
+.nav-list-item:hover .tarr,.on .tarr{}
+.nav-list-item-f{ display: block; }
+.nav-list-item-f a{ display: block;padding-top:23px;*padding-top:19px;height:37px;*height:40px; line-height: 12px; }
+.bg-none a{background-image:none; }
+.nav-list-s{position:absolute;right:0;width:138px;background-color: #fff;display: none;padding:9px 0; *margin-top:1px; }
+.nav-list-s dl{ width:120px;margin:0 auto; padding:0;height:26px;line-height:26px;float:none;border-bottom:0;}
+.nav-list li .nav-list-s a,.nav-list li.actvie .nav-list-s a{color: #942da7;display:block; height:26px;line-height: 26px;padding-top:0; font-size: 12px; font-weight: normal; text-align: right; padding-right: 9px; background-color: #fff;transition: all .5s;}
+.nav-list li .nav-list-s a:hover{text-decoration:none;color:#942da7; background-color: #f4b6ff;}
+.go-back{float: right;color:#fff;text-decoration: none;line-height: 60px;}
+.go-back:hover{color:#fff;text-decoration: underline;}
+.active .tarr-select{}
+/*.placeholder{height: 80px;display:none;}*/
+#head_white_css .jycm_zt_logo img{vertical-align:top;}

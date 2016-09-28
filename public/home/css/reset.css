@@ -1,0 +1,27 @@
+@charset 'UTF-8';
+/* css reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+fieldset,img{border:0;}
+iframe{display:block;}
+ol,ul{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
+.clear{clear:both;}
+.fn-clear:after{display:block;visibility:hidden;clear:both;height:0;font-size:0;content:' ';}
+.fn-clear{zoom:1; /* for IE6 IE7 */}
+.fn-hide{display:none;}
+.fn-left{float:left;}
+.fn-right{float:right;}
+img{vertical-align:top;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+.date_wrap_gray{background-color:#f9f9f9;}
+.date_wrap_grey{background-color:#f2f2f4;}
+.date_wrap_f4{background-color:#f4f4f4;}
+.date_wrap_white{background-color:#fff;}
+body{cursor:default;}
+/* 字体颜色 */
+.col_gray{color:#666;}
+.col_red{color:#ff5b70;}
+#date_float_box{position:fixed;z-index:999;top:0;_position:absolute;_top:expression(eval(document.documentElement.scrollTop));}
+#float_top{position:fixed;z-index:999;bottom:100px;left:50%;display:none;width:39px;height:39px;margin-left:615px;background:url(../i/float_top.png) no-repeat;cursor:pointer;}

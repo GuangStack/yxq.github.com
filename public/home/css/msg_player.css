@@ -1,0 +1,17 @@
+@charset "utf-8";
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, blockquote, p {margin: 0;padding: 0;}
+.layer_box{font-size: 14px;}
+.layer_box h2{font-weight: bold;}
+.layer_con{padding:28px 25px 30px; line-height: 28px;}
+.red_bold{color:#ff0000;font-weight: bold;}
+#msg_alert_box .layer_txt{height: 90px;font-size: 14px; line-height: 28px; background:#fff; }
+a.layer_btn:link,
+a.layer_btn:hover,
+a.layer_btn:visited,
+a.layer_btn:active{color:#fff; background:#1ca1c7;width:111px; height:38px; display:block; text-decoration:none; text-align:center;line-height:38px; margin:0 auto;cursor:pointer; font-size: 14px;}
+a.layer_btn:hover{background:#20aed6;color:#fff; width:111px; height:38px; display:block; text-decoration:none; text-align:center;line-height:38px; margin:0 auto;cursor:pointer;}
+.layer_box h2 {background: url("../i/layer_h2_bg.jpg") repeat-x;color: #fff;font-size: 14px;font-weight: bold;height: 30px;line-height: 30px;padding: 0 10px;text-align: left;}
+.layer {display:none;position: fixed;z-index:999999;width: 528px; top:50%; left:50%; margin-left:-264px; margin-top:-109px;
+	    _position:absolute;_margin-top:0;_top: expression(eval(document.documentElement.scrollTop+200));}
+.layer_box h2 img {cursor: pointer;float: right;margin-top: 11px;}
+.layer_box {background:#fff;border: 1px solid #fff;}

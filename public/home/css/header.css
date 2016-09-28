@@ -1,0 +1,49 @@
+.pt10 { padding-top: 10px; }
+
+/* header */
+.date_header, .date_nav { width: 1200px; margin: 0 auto; }
+
+.header_logo { float: left; margin: 12px 50px 0 15px; _display: inline; }
+
+.header_slogan { float: left; margin: 12px 0 0 35px; }
+
+.header_city { position: relative; z-index: 9999; float: left; width: 65px; margin-top: 22px; }
+
+.city_now { font: 12px/20px 'SimSun'; color: #666; text-align: center; }
+.city_now a { color: #666; }
+.city_now a:hover { color: #ff5b70; }
+.city_now .city_default { padding-right: 13px; background: url(../i/city_default.png) no-repeat right center; }
+
+.city_check { position: absolute; z-index: 9999; top: 40px; left: 0; width: 455px; padding: 12px 0 12px 25px; border: 1px solid #ccc; background: #fff url(../i/city_check.png) no-repeat right bottom; font: bold 14px/34px 'Microsoft Yahei'; color: #333; }
+.city_check a { margin-right: 20px; font-weight: normal; color: #333; }
+.city_check .city_close { position: absolute; z-index: 9999; top: 10px; right: 10px; display: block; width: 12px; height: 11px; overflow: hidden; margin: 0; background: url(../i/city_close.png) no-repeat 0 0; cursor: pointer; }
+
+.nav_list { float: left; height: 47px; }
+.nav_list li { display: none; float: left; height: 47px; margin-right: 1px; }
+.nav_list li a { display: block; padding: 0 15px; font: 16px/44px 'Microsoft Yahei'; color: #333; }
+.nav_list li a.cur, .nav_list li a:hover { border-bottom: 3px solid #ff5b70; text-decoration: none; }
+
+.nav_login { float: right; margin: 10px 0; height: 24px; color: #999; }
+.nav_login a { font: 16px/24px 'Microsoft Yahei'; color: #666; }
+.nav_login a:hover { color: #ff5b70; }
+
+.nav_return { float: right; display: block; margin: 10px 20px 10px 0; padding-left: 17px; font: 16px/24px 'Microsoft Yahei'; color: #aaa; }
+.nav_return:hover { text-decoration: none; }
+
+.login_user { position: relative; z-index: 9999; float: left; height: 24px; }
+.login_user .user_slide { position: absolute; z-index: 9999; top: 24px; left: 50%; width: 116px; margin-left: -58px; background-color: #fff; }
+.login_user .user_slide div { position: relative; z-index: 9998; top: -1px; padding: 10px 0; border: 1px solid #d9d9d9; }
+.login_user .user_slide a { display: block; font: 14px/24px 'Microsoft Yahei'; color: #666; text-align: center; }
+.login_user .user_slide a.cur { background-color: #e6e6e6; }
+.login_user .user_slide a:hover { text-decoration: none; }
+.login_user .user_slide em { display: block; position: relative; top: 0; z-index: 9999; width: 20px; height: 11px; margin: 0 auto; background: url(../i/login_slide.png) no-repeat center; }
+
+.date_address { position: relative; z-index: 999; width: 1200px; height: 30px; margin: 0 auto; font: bold 14px/30px 'SimSun'; color: #888; }
+.date_address .address_check { position: relative; display: inline-block; *display: inline; *zoom: 1; }
+.date_address .address_check .check_now { display: inline-block; *display: inline; *zoom: 1; padding-right: 13px; background: url(../i/city_default.png) no-repeat right center; color: #888; }
+.date_address .address_check .addr_slide { position: absolute; z-index: 999; top: 24px; left: 50%; width: 116px; margin-left: -58px; }
+.date_address .address_check .addr_slide div { position: relative; z-index: 998; top: -1px; width: 114px; padding: 10px 0; border: 1px solid #d9d9d9; background-color: #fff; }
+.date_address .address_check .addr_slide a { display: block; color: #888; text-align: center; }
+.date_address .address_check .addr_slide a.cur { background-color: #e6e6e6; }
+.date_address .address_check .addr_slide a:hover { text-decoration: none; }
+.date_address .address_check .addr_slide em { display: block; position: relative; z-index: 999; width: 20px; height: 11px; margin: 0 auto; background: url(../i/login_slide.png) no-repeat center; }

@@ -1,0 +1,137 @@
+
+/* 通用样式 */
+.f_red { color: #dc4183;}
+.clearfix:after {clear: both; content: " "; display: block; font-size: 0; height: 0; visibility: hidden;}
+.clearfix{zoom:1;}
+.ws_title{font-size: 14px;}
+.ws_title2{margin: 12px 0; font-size: 14px;}
+.hide{display: none;}
+.font14{font-size: 14px;}
+.parent_work{color: #4d4d4d}
+.financial{ margin-bottom: 10px;}
+.f_red{color: #dc4183; margin-top: 12px;}
+.base_infomation h1{font-size: 14px;}
+.base_infomation h3 {margin-top:10px;}
+/* 通用样式 */
+
+/*按钮样式  start*/
+ .save { background: url("../i/bg_btn.gif") no-repeat  0 -123px ;  border: 0 none;  color: #fff;  cursor: pointer;  font: 12px/31px arial;  height: 31px;    width: 91px; margin-top: 20px;}
+.skip {  background: url("../i/bg_btn.gif") no-repeat  0 -205px ;  border: 0 none;  color: #666;   cursor: pointer;   font: 12px/31px arial;   height: 31px;    margin-left: 10px;    width: 91px;}
+/*按钮样式  end*/
+
+/*progress bar 样式*/
+.man_bar,.woman_bar{width: 175px; float: }
+.man_bar p , .woman_bar p{width: 28px; height: 11px; float: left;  font-size: 0;  height: 11px;  line-height: 11px;  margin: 3px 1px 0 0; width: 28px;}
+.man_bar p{background-color:#eaf5f7 } /* manbar 初始状态的颜色 (顺序不能调换)*/
+.man_bar .d_dark{background-color: #98d7e6;} /* manbar 点亮的颜色*/
+.man_bar .l_blue{background-color:#eaf5f7 }  /* manbar 鼠标移上全部置灰*/
+.man_bar .d_hover{background-color: #98d7e6;} /* manbar 鼠标移上当前及其前面的点亮*/
+
+.woman_bar p{background-color: #FAF1F4}
+.woman_bar .d_dark{background-color: #FDB7BF;}
+.woman_bar .l_blue{background-color:#FAF1F4 }
+.woman_bar .d_hover{background-color: #FDB7BF;}
+.w_degree td{padding: 5px 5px 5px 0;}
+.de_n{color: #999898;}
+/*progress bar 样式*/
+
+/*修改择偶要求  start*/
+#w_usercp_match{padding-bottom:20px; }
+#w_usercp_match .save{margin:20px 0;}
+#w_usercp_match .skip {margin:20px 0 20px 10px;}
+#w_usercp_match{color: #656565;}
+.w_condition{margin:15px 0 4px;}
+.changematch .w_tit1{ color: #000; font-weight: bold;  margin: 0 0 9px;  padding: 0;}
+#select_must{padding:20px 30px;}
+.usercp_mid .usercp_match .w_userh2{height: 5px;}
+.w_userh2 .l2,.w_userh2 .l3,.w_userh2 .l4{background: #fff;}
+.content .changematch ul{float: none;}
+.select_must_con{ margin-top: 15px;}
+.w_table td{ padding: 5px 0;}  /*设置表格间距*/
+.w_table td input{vertical-align: text-bottom; margin-right: 4px; *margin-right: 2px; *vertical-align: -2px; _vertical-align: -3px;}
+.md_l{width: 95px; vertical-align: top;position: relative;text-align: left; width: 65px;padding-left: 20px;}  /*表格标题样式*/
+.w_table td.md_l{padding-left: 20px;}
+.w_table td.md_l .ico_stars {position: absolute;top: 0;left: 0;width: 15px;height: 20px;line-height:31px;color: #ff687b;text-align: center; overflow: hidden;}
+.m_select128 { width: 128px; margin-bottom: 10px;} /* 宽度为128px 的下拉框样式 */
+.m_select70{ width: 70px;} /* 宽度为70px 的下拉框样式 */
+.m_select195{ width: 195px;}
+.m_checkbox1{vertical-align: middle; margin-right: 37px;}
+.m_checkbox1 input{vertical-align: middle; margin-right: 5px;}
+.w_textarea{ border: 1px solid #b7b7b7;  height: 100px;  width: 260px;}
+.lineheight30{line-height: 30px;}
+/*修改择偶要求  end*/
+
+/*我的照片样式 start*/
+.my_userface .pic .image{background: url("../i/picbgw.png") no-repeat ; width: 120px; height: 120px;}
+.my_userface .pic .hidden_div{ width:120px; }
+/*我的照片样式 end*/
+
+/* 外貌体型  start*/
+.base_infomation td .om_select128 { width: 128px; } 
+.base_infomation td .om_select195{width: 195px;}
+.degree .checkbox{width: 180px; margin-bottom: 0;}
+.e_note{float: left; margin-left: 20px; color: #999999}
+.data-checkbox dd{float: left; width: 100px;   color: #4d4d4d;  height: 23px;}
+.data-checkbox input{vertical-align: middle; margin-right: 8px;}
+.l-title{vertical-align: top;}
+/* 外貌体型  end*/
+
+/* 自我评价  start*/
+.e_global{float: left; width: 85px;}
+.degree{margin-bottom: 13px;}
+.m_select114{width: 114px; }
+.mid_border .base_infomation .m_select114{color: #4d4d4d;}
+/* 自我评价  end*/
+
+/*生活方式  start*/
+.mid_border .base_infomation td.m_select105{width: 105px;}
+/*生活方式  end*/
+
+/*经济实力  start*/
+.economic_d{margin-top: 27px;}
+.economic_dl{float: left; width: 85px; _margin-top:3px;}
+.economic_button{ margin: -10px 0 0 70px;}
+.we_dl2 label input{ line-height: 28px;}
+.save{margin-top:20px;}
+.we_dl2{width: 395px;}
+.parent_work{margin-left: 8px;}
+.economic_d{margin-top: 27px;}
+.financial .checkbox{float: left; }
+.financial .checkbox dd{float: left; width: 130px;  height: 25px; * margin-top: -5px; _padding-top: 3px;}
+.financial .checkbox dd input{vertical-align: middle; _vertical-align: baseline;  margin-right:6px;  * margin:0 2px 0 0;}
+.degree .economic_dl{width: 85px; }
+.economic_button{ margin: -10px 0 0 70px;}
+#economic_strength .e_note{width: 130px;}
+/*经济实力  end*/
+
+
+/* 婚姻观  start*/
+#w_marriage{padding-bottom:46px;}
+#w_marriage .brother-sister li{float: left; margin-right: 15px; width: auto; height:20px;}
+.base_infomation .brother-sister select {width:40px; vertical-align: middle;}
+.selfhood #economic_dl{float: left; width: 100px;}
+#w_marriage td.m_select112{width: 112px;}
+.base_infomation td select.m_select130{width: 130px;}
+#w_marriage .base_infomation .brother-sister select{width: 45px;}
+.brother-sister input,.brother-sister label ,.brother-sister span{vertical-align: middle; height: 20px; line-height: 20px; }
+.base_infomation td, .item{ white-space: nowrap;}
+/* 婚姻观  end*/
+
+/* 基本资料  start*/
+.base_infomation td.item {color:#4D4D4D;text-align:left; width: 65px;padding-left:20px; position: relative; }
+.base_infomation td .ico_stars{ position: absolute;top:0;left:0;width:15px;height:28px;line-height:28px; color:#ff687b; text-align: center; }
+.base_infomation td{padding:0; line-height: 28px;}
+#change_area_div{z-index: 98; left:298px; top: 278px;}
+#w_base_infomation #info_div_content{ white-space: normal;}
+#w_base_infomation #info_div{left: 218px; top: -19px;}
+#w_base_infomation td{position: relative;}
+#w_base_infomation .ico0 {margin-top: 6px; *margin-top: 2px;}
+/* 基本资料  end*/
+
+
+/* 工作学习  start*/
+#w_marriage  td.item {width: 109px;}
+.base_infomation td.item105{width: 105px;}
+/* 工作学习  end*/
+
+

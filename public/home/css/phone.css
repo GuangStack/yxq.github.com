@@ -1,0 +1,62 @@
+/* color */
+.col-blue{color:#2b81d4;}
+.col-red{color:#ff546a;}
+/* 鎵嬫満楠岃瘉寮瑰眰 */
+.phone-wrap{position:relative;width:510px;height:355px;overflow:hidden;background:#f3f3f3 url(../i/cloud.png) no-repeat center bottom;}
+.phone-title{margin:40px 0 0 0;padding:0 50px;text-align:center;}
+.phone-title p{display:inline-block;height:44px;padding-left:63px;background:url(../i/icon.png) no-repeat 0 0;font:26px/44px 'Microsoft Yahei';color:#666;*display:inline;*zoom:1;}
+.phone-word{margin:15px 0 20px 0;padding:0 50px;font:12px/24px 'Microsoft Yahei';color:#888;text-indent:2em;}
+.phone-input{margin:0 0 3px 0;padding:0 50px;}
+.phone-input dt{float:left;width:90px;height:32px;margin:0 5px 0 0;font:14px/32px 'Microsoft Yahei';color:#666;text-align:right;}
+.phone-input dd{position:relative;float:left;line-height:32px;}
+.phone-input dd div.default-num{width:188px;height:22px;padding:5px 6px;font:14px/22px 'Microsoft Yahei';color:#666;}
+.phone-input dd input{width:188px;height:22px;padding:4px 5px;border:1px solid #d0d2d6;background-color:#fff;font:14px/22px 'Microsoft Yahei';color:#666;outline:none;}
+.phone-input dd .change-num{display:none;}
+.phone-input dd input.change-wrong{border:1px solid #ffb0ba;}
+.phone-input .note{width:200px;height:7px;overflow:hidden;}
+.phone-input .notice{width:180px;height:20px;padding-left:20px;background:url(../i/wrong.png) no-repeat 0 center;font:12px/20px 'Microsoft Yahei';color:#ff546a;}
+.phone-input .warning{width:180px;height:20px;font:12px/20px 'Microsoft Yahei';color:#888;}
+/* 淇敼&纭鎸夐挳 */
+.change-btn,.change-btn:active{margin:0 0 0 20px;font:14px/32px 'Microsoft Yahei';}
+/* 鑾峰彇楠岃瘉鐮佹寜閽� */
+.code-btn,.code-btn:active{display:block;width:103px;height:30px;margin:0 0 0 10px;border:1px solid #7acfe7;background-color:#ebfbff;font:14px/30px 'Microsoft Yahei';color:#0098c2;text-align:center;}
+.code-btn:hover{text-decoration:none;background-color:#d1f5ff;}
+.code-btned,.code-btned:hover,.code-btned:active{border:1px solid #d8d8d8;background-color:#e4e4e4;color:#888;cursor:default;}
+/* 瀹屾垚楠岃瘉鎸夐挳 */
+.submit-btn,.submit-btn:active{display:block;width:200px;height:36px;margin:10px 0 0 145px;background-color:#ff546a;font:16px/36px 'Microsoft Yahei';color:#fff;text-align:center;}
+.submit-btn:hover{text-decoration:none;background-color:#ff2642;}
+.smz-wenan{margin-top:10px;text-align:center;}
+.smz-wenan a{font:12px/1.5 'Microsoft Yahei';color:#999;}
+/* 鎵嬫満鍙烽噸澶嶉獙璇佸脊灞� */
+.check-wrap{position:relative;width:450px;height:300px;overflow:hidden;background:#f3f3f3 url(../i/cloud.png) no-repeat center bottom;}
+.check-close,.check-close:active{position:absolute;top:10px;right:10px;display:block;width:13px;height:13px;overflow:hidden;background:url(../i/tc-close.png) no-repeat 0 0;}
+.check-close:hover{text-decoration:none;background-position:0 -13px;}
+.check-title{margin:28px 0 0 38px;padding:2px 0 0 42px;background:url(../i/check-icon.png) no-repeat left top;font:18px/28px 'Microsoft Yahei';color:#666;}
+.check-exp{margin:16px 45px 22px 80px;font:12px/28px 'SimSun';color:#888;}
+.check-btn{margin:0 0 0 80px;}
+.check-btn .reg-btn,.check-btn .reg-btn:active{float:left;display:block;width:164px;height:36px;overflow:hidden;margin-right:20px;background-color:#ff546a;font:14px/36px 'Microsoft Yahei';color:#fff;text-align:center;}
+.check-btn .reg-btn:hover{text-decoration:none;background-color:#ff2642;}   
+.check-btn .login-btn{float:left;display:block;width:100px;height:36px;overflow:hidden;background-color:#0098c2;font:14px/36px 'Microsoft Yahei';color:#fff;text-align:center;}
+.check-btn .login-btn:hover{text-decoration:none;background-color:#0086ab;}
+/* 鍏嶅瘑鐧诲綍寮瑰眰 */
+.login-wrap{position:relative;width:460px;height:285px;overflow:hidden;padding-left:50px;background:#f3f3f3 url(../i/cloud.png) no-repeat center bottom;}
+.login-title{margin:30px 0 0 0;padding:0 0 0 42px;background:url(../i/check-icon.png) no-repeat left top;font:600 20px/32px 'Microsoft Yahei';color:#666;}
+.login-exp{margin:16px 0 0 0;font:14px/28px 'Microsoft Yahei';color:#666;}
+.login-input{margin-top:10px;}
+.login-input dt{float:left;width:103px;font:14px/32px 'Microsoft Yahei';color:#333;}
+.login-input dd{position:relative;float:left;}
+.login-input dd input{display:block;width:180px;height:30px;padding:0 5px;outline:none;border:1px solid #d0d2d6;background-color:#fff;font:14px/30px 'Microsoft Yahei';color:#333;}
+.login-input .note{width:200px;height:7px;overflow:hidden;}
+.login-input .notice{width:180px;height:20px;padding-left:20px;background:url(../i/wrong.png) no-repeat 0 center;font:12px/20px 'Microsoft Yahei';color:#ff546a;}
+.login-input .warning{width:180px;height:20px;font:12px/20px 'Microsoft Yahei';color:#888;}
+.login-box{margin:0px 0 0 103px;}
+.login-box .login-btn{float:left;display:block;width:192px;height:36px;overflow:hidden;background-color:#0098c2;font:14px/36px 'Microsoft Yahei';color:#fff;text-align:center;}
+.login-box .login-btn:hover{text-decoration:none;background-color:#0086ab;}
+.login-box .close-btn{float:left;margin:10px 0 0 20px;font:14px/16px 'Microsoft Yahei';color:#888;}
+.login-box .close-btn:hover{text-decoration:none;color:#666;}
+
+.i-w{ height:80px; position: relative; }
+.mobile_warning{ display: none; position: absolute;left:0;top:38px;width: 330px; font-size: 12px;color:#939393;line-height: 18px;}
+.mobile_warning a{color:#0062cd;}
+.login-input dd input.mobile_errLine{border-color:#ffb0ba;}
+.login-input dd input.mobile_errTxt{color:#ff546a;}

@@ -1,0 +1,27 @@
+@charset "utf-8";
+#open_big,#open_small,#op_stamp_balance,#op_wish_ok,#gift_to_member,#member_to_gift,#nomoney_step2,#money_step2,#dosent_ok,#finish_wish{position:absolute; display:none; z-index:910;}
+
+/* op-bg */
+.op_box{padding:3px; background:url(../i/op_bg.png); clear:both; position:relative; overflow:hidden;}
+.op_box .op_subbg{padding:1px; background:#fff; }
+.op_box h4{text-shadow:0 1px 0 #ce306c; height:30px; padding-left:10px; background:url(../i/op_bg.jpg); line-height:30px; color:#fff; font-size:14px; text-align:left; font-weight:bold;}
+.op_box h4 a.op_close{float:right; width:15px; height:15px; margin:7px 7px 0; background:url(../i/op_close.gif) no-repeat right top;}
+.op_box h4 a.op_close:hover{background:url(../i/op_close.gif) no-repeat left top;}
+.op_box h3{height:30px; padding-left:10px; background:url(../i/op_bg2.jpg); line-height:30px; color:#fff; font-size:12px; text-align:left; font-weight:bold;}
+.op_box h3 a.op_close{float:right; width:26px; height:24px;  background:url(../i/op_close2.jpg) no-repeat;}
+
+/* but-styles*/
+.op_but,
+a.op_but:hover{display:block; height:28px; background:url(../i/op_but_1.png) no-repeat; _ background:url(../i/op_but_1.gif) no-repeat; color:#fff; text-shadow:0 1px 0 #e67526; font-size:14px; font-weight:bold; line-height:28px; text-decoration:none; text-align:center;}
+.op_but_w1{width:70px; background-position:left top;}
+a.op_but_w1:hover{background-position:-160px top;}
+.op_but_w2,
+a.op_but_w2:hover{width:110px; background-position:left -120px; color:#999; text-shadow:0 1px 0 #fff;}
+a.op_but_w2:hover{background-position:-160px -120px;}
+.op_but_w3{width:140px; background-position:left -80px;}
+a.op_but_w3:hover{background-position:-160px -80px;}
+
+/* op-fix*/
+.op_fix{width:92%; padding:20px 0; line-height:24px; text-align:center;  margin:0 auto; overflow:hidden; position:relative;}
+.op_fix p{padding:0 24px; text-align:left;}
+.op_fix .op_but{margin:0 auto;}

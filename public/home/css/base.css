@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* 
+   @鍚嶇О: base
+   @鍔熻兘: 閲嶈娴忚鍣ㄩ粯璁ゆ牱寮�
+*/
+
+/* 闃叉鐢ㄦ埛鑷畾涔夎儗鏅鑹插缃戦〉鐨勫奖鍝嶏紝娣诲姞璁╃敤鎴峰彲浠ヨ嚜瀹氫箟瀛椾綋 */
+html{color:#000;background:#fff;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;}
+
+/* 鍐呭杈硅窛閫氬父璁╁悇涓祻瑙堝櫒鏍峰紡鐨勮〃鐜颁綅缃笉鍚� */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {margin:0;padding:0;}
+
+/* 閲嶈 HTML5 鏍囩, IE 闇€瑕佸湪 js 涓� createElement(TAG) */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block;}
+
+
+/* 瑕佹敞鎰忚〃鍗曞厓绱犲苟涓嶇户鎵跨埗绾� font 鐨勯棶棰� */
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53;}
+input,select,textarea{font-size:100%;}
+
+/* IE bug fixed: th 涓嶇户鎵� text-align*/
+th{text-align:inherit;}
+fieldset,img{border:0;}
+
+/* ie6 7 8(q) bug 鏄剧ず涓鸿鍐呰〃鐜� */
+iframe{display:block;}
+
+/* 鍘绘帀 firefox 涓嬫鍏冪礌鐨勮竟妗� */
+abbr,acronym{border:0;font-variant:normal;}
+
+/* 涓€鑷寸殑 del 鏍峰紡 */
+del {text-decoration:line-through;}
+
+address,caption,cite,code,dfn,em,th,var {font-style:normal;font-weight:500;}
+
+/* 鍘绘帀鍒楄〃鍓嶇殑鏍囪瘑, li 浼氱户鎵� */
+ol,ul {list-style:none;}
+
+/* 瀵归綈鏄帓鐗堟渶閲嶈鐨勫洜绱 , 鍒浠€涔堥兘灞呬腑 */
+caption,th {text-align:left;}
+
+/* 鏉ヨ嚜yahoo, 璁╂爣棰橀兘鑷畾涔�, 閫傚簲澶氫釜绯荤粺搴旂敤 */
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:500;
+}
+
+/* 娓呯悊娴姩 */
+.fn-clear:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;
+}
+.fn-clear {zoom:1; /* for IE6 IE7 */}
+
+/* 闅愯棌, 閫氬父鐢ㄦ潵涓� JS 閰嶅悎 */
+.fn-hide {display:none;}
+
+/* 璁剧疆鍐呰仈, 鍑忓皯娴姩甯︽潵鐨刡ug */
+.fn-left {float:left;}
+.fn-right {float:right;}
+
+/* 閾炬帴榛樿鐘舵€�  */
+a{color:#333; text-decoration:none;}  /* 榛樿涓嶆樉绀轰笅鍒掔嚎锛屼繚鎸侀〉闈㈢畝娲� */
+a:hover{text-decoration:underline;}   /* 璁╅摼鎺ュ湪 hover 鐘舵€佷笅鏄剧ず涓嬪垝绾� 
+
+/* 閾炬帴-鐏拌壊*/
+.a_black {color:#000;} .a_gray_000:hover {color:#F03B85;}        /* 榛戣壊 */
+/* 閾炬帴-鐏拌壊*/
+.a_gray_333 {color:#333;} .a_gray_333:hover {color:#F03B85;}   /* 甯哥敤榛戣壊 */
+.a_gray_666 {color:#666;} .a_gray_666:hover {color:#F03B85;}   /* 榛戣壊鍐嶆涔� */
+.a_gray_999 {color:#999;} .a_gray_999:hover {color:#F03B85;}   /* 榛戣壊鍐嶆涔�2 */
+.a_gray_ccc {color:#ccc;} .a_gray_ccc:hover {color:#F03B85;}      /* 甯哥敤鐏拌壊 */
+/* 閾炬帴-鐧借壊*/
+.a_white {color:#fff;}    .a_white:hover {color:#F03B85;}
+/* 閾炬帴-钃濊壊*/
+.a_blue {color:#06c;}     .a_blue:hover {color:#F03B85;}
+/* 閾炬帴-绮夎壊*/
+.a_pink  {color:#F03B85;}
+/* 閾炬帴-绾㈣壊*/
+.a_red  {color:#f00;}
+
+/* 閾炬帴-澶у皬  */
+.f_12 {font-size:12px;}
+.f_14 {font-size:14px;}
+.f_16 {font-size:16px;}
+.f_18 {font-size:18px;}
+.f_20 {font-size:20px;}
+
+/* 閾炬帴-涓嬪垝绾�  */
+.a_line {text-decoration:underline;}
+.a_line_none {text-decoration:none;}
+
+
+/* 鏂囧瓧棰滆壊  */
+.f_black {color:#000;}      /* 榛戣壊 */
+.f_gray_333 {color:#333;}    /* 甯哥敤榛戣壊 */
+.f_gray_666 {color:#666;}    /* 榛戣壊鍐嶆涔� */
+.f_gray_999 {color:#999;}    /* 榛戣壊鍐嶆涔�2 */
+.f_gray_ccc {color:#ccc;}     /* 甯哥敤鐏拌壊 */
+.f_white {color:#fff;}         /* 鐧借壊 */
+.f_blue {color:#06c;}          /* 钃濊壊 */
+.f_pink  {color:#F03B85;}    /* 绮夎壊 */
+.f_red  {color:#f00;}    /* 绾㈣壊 */
+
+/* 鏂囧瓧澶у皬  */
+.f_size_12 {font-size:12px;}
+.f_size_14 {font-size:14px;}
+.f_size_16 {font-size:16px;}
+.f_size_18 {font-size:18px;}
+.f_size_20 {font-size:20px;}

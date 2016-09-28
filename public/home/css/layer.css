@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+.LayerTitle{border:1px solid #E03D80; height:28px; background:url(../i/layer/privilegeLayerTitleBg.jpg) left top repeat-x scroll; overflow:hidden;}
+.LayerTitleName{float:left; color:#FFF; height:28px; border-left:1px solid #F66FA1;padding-left:10px; line-height:24px; font-weight:bold;}
+a:link.LayerTitleClose,a:active.LayerTitleClose,a:visited.LayerTitleClose{float:right;width:23px; height:28px; display:block; background:url(../i/layer/LayerTitleClose.gif);}
+a:hover.LayerTitleClose{background:url(../i/layer/LayerTitleCloseHover.gif);}
+.LayerBody{padding:15px 0 0; background:#fff;}
+.layerStrong{ font-weight:bold;}
+.buttonMargin{ margin:0 auto;}
+.buttonFloatL{ float:left;}
+.layerBottom{ background:#fff;}
+.layerFense{color:#F23D87; font-size:14px; font-weight:bold;}
+.layerFense2{color:#F23D87; font-size:12px; font-weight:bold;}
+.clear_line{clear:both;}
+.floatLeft{ float:left;}
+.floatLeft10Px{float:left; margin-right:10px;}
+.floatright{float:right;}
+.titleName{color:#fff; font-size:14px; font-weight:bold; line-height:30px;}
+.sjjywxts{ text-align:center; margin-bottom:10px;}
+.sjjywxts2{font-size:14px; color:#ff4800; margin-bottom:20px; font-weight:bold;}
+.sjjywxts2Fen{font-size:14px; color:#dd1764;}
+.nikeyi{}
+.privilegelayerTishiDiv2 .nikeyi p{padding:0 0 0 20px; background:url(../i/layer/nikeyiBg.jpg) 10px center no-repeat; font-size:12px;}
+.nikeyi span{color:#ff4800; font-weight:bold;}
+.privilegeLayer1 {width:480px; margin:0 auto 15px; font-size:12px; line-height:24px;}
+.privilegeLayer2 {width:600px; margin:0 auto 15px; font-size:12px; line-height:24px;}
+.privilegeLayer3 {width:510px; margin:0 auto 15px; font-size:12px; line-height:24px; background:#fff; padding-bottom:15px;}
+.privilegelayerTextDiv{width:390px; margin:0 auto; background:#f9f9f9; padding:5px 0 5px 60px; overflow:hidden;}
+.privilegelayerTextDivL{float:left;width:30px; text-align:right;}
+.privilegelayerTextDivR{float:right; width:350px;}
+.privilegelayerTextDiv2{width:550px; margin:0 auto;color:#666; font-size:14px; line-height:40px; text-align:left; padding:10px 0 10px 20px;}
+.privilegelayerTextDiv3{width:570px; margin:0 auto; background:#f9f9f9; padding:10px 0 15px; overflow:hidden;font-size:14px; line-height:30px;}
+.privilegelayerTextDiv3L{width:120px; float:left; text-align:right;font-size:14px; line-height:30px;}
+.privilegelayerTextDiv3R{width:440px; float:right; overflow:hidden;font-size:14px; line-height:30px;}
+.privilegelayerTextDiv3R td{font-size:14px; line-height:30px; padding-right:10px;}
+.privilegelayerTishiDiv{width:420px; margin:0 auto; background:#f9f9f9; padding:15px;font-size:14px; line-height:30px;}
+.privilegelayerTishiDiv2{width:440px; margin:0 auto; background:#f9f9f9; padding:15px;font-size:14px; line-height:30px;}
+.privilegelayerTextDiv p,.privilegelayerTextDiv .layerStrong,.privilegelayerTishiDiv2 p,.privilegelayerTishiDiv2 .layerStrong{font-size:14px; line-height:30px;color:#333;}
+
+.privilegeZhushi{width:430px; height:48px; margin:0 auto; color:#666; padding:15px 10px; overflow:hidden;border-top:dashed 1px #ccc;}
+.privilegeZhushi a:link,.privilegeZhushi a:active,.privilegeZhushi a:visited{color:#2C81D6; text-decoration:underline;}
+.privilegeZhushi a:hover{ text-decoration:none;}
+.privilegeZhushiL{float:left; width:65px;color:#666; text-align:right;}
+.privilegeZhushiR{float:left; width:360px;color:#666;}
+.privilegeZhushi2{width:450px; height:48px; margin:0 auto; color:#666; padding:15px 10px; overflow:hidden;border: solid 1px #EDE3D7; background:#fefdf8;}
+.privilegelayerJiesuan,.privilegelayerJiesuan2,.privilegelayerJiesuan3{height:39px; background:url(../i/layer/privilegeLayerTishiR.jpg) right top scroll no-repeat; width:275px; margin-left:70px; display:none;}
+.privilegelayerJiesuan2{margin-left:30px;}
+.privilegelayerJiesuan3{width:310px; margin-left:120px;}
+.privilegelayerJiesuanL{background:url(../i/layer/privilegeLayerTishiL.jpg) left top scroll no-repeat; padding-left:10px; height:39px;}
+.privilegelayerJiesuanL p{ padding-top:10px; color:#666;}
+.privilegeLayerButtonDiv{padding:15px 0; width:172px; margin:0 auto; overflow:hidden;}
+.privilegeLayerButtonDiv2{padding:15px 0; width:152px; margin:0 auto; overflow:hidden;}
+.privilegeLayerButtonDiv3{padding:15px 0; width:470px; margin:0 auto; overflow:hidden;}
+.privilegeLayerButtonDiv4{padding:15px 0; width:320px; margin:0 auto; overflow:hidden;}
+.privilegeLayerButtonDiv5{padding:15px 0; width:380px; margin:0 auto; overflow:hidden;}
+a:link.alinkBlue,a:active.alinkBlue,a:visited.alinkBlue{color:#2C81D6; text-decoration:underline;}
+a:link.privilegeLayerButton,a:visited.privilegeLayerButton,a:active.privilegeLayerButton{width:69px; height:28px; display:block; background:url(../i/layer/layerButton.gif) left top scroll no-repeat; color:#FFF; text-align:center;  line-height:28px;font-size:14px; font-weight:bold; text-decoration:none; margin:0 auto;}
+a:hover.privilegeLayerButton{ background:url(../i/layer/layerButton.gif) -79px top scroll no-repeat; text-decoration:none;}
+
+a:link.privilegeLayerButton2,a:visited.privilegeLayerButton2,a:active.privilegeLayerButton2{width:92px; height:28px; display:block; background:url(../i/layer/layerButton.gif) left -38px scroll no-repeat; color:#FFF; text-align:center;  line-height:28px;font-size:14px; font-weight:bold; text-decoration:none; float: left; }
+a:hover.privilegeLayerButton2{ background:url(../i/layer/layerButton.gif) -102px -38px scroll no-repeat; text-decoration:none;}
+
+a:link.privilegeLayerButton3,a:visited.privilegeLayerButton3,a:active.privilegeLayerButton3{width:69px; height:28px; display:block; background:url(../i/layer/layerButton.gif) left -76px scroll no-repeat; color:#999; text-align:center;  line-height:28px;font-size:14px; font-weight:bold; text-decoration:none;float:right;}
+a:hover.privilegeLayerButton3{ background:url(../i/layer/layerButton.gif) -79px -76px scroll no-repeat; text-decoration:none; }
+a:link.privilegeLayerButton4,a:visited.privilegeLayerButton4,a:active.privilegeLayerButton4{width:153px; height:37px; display:block; background:url(../i/layer/layerButton.gif) left -114px scroll no-repeat; color:#fff; text-align:center;  line-height:37px;font-size:14px; font-weight:bold; text-decoration:none; filter: DropShadow(Color=#D01200, OffX=1, OffY=1, Positive=1);text-shadow: 0 1px 0 #D01200;}
+a:hover.privilegeLayerButton4{ background:url(../i/layer/layerButton.gif) -163px -114px scroll no-repeat; text-decoration:none;}
+a:link.privilegeLayerButton5,a:visited.privilegeLayerButton5,a:active.privilegeLayerButton5{width:141px; height:37px; display:block; background:url(../i/layer/layerButton.gif) left -155px scroll no-repeat; color:#999; text-align:center;  line-height:37px;font-size:14px; font-weight:bold; text-decoration:none; filter: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1);text-shadow: 0 1px 0 #ffffff;}
+a:hover.privilegeLayerButton5{ background:url(../i/layer/layerButton.gif) -150px -155px scroll no-repeat; text-decoration:none;}
+a:link.privilegeLayerButton6,a:visited.privilegeLayerButton6,a:active.privilegeLayerButton6{width:100px; height:37px; display:block; background:url(../i/layer/layerButton.gif) left -242px scroll no-repeat; color:#999; text-align:center;  line-height:37px;font-size:14px; font-weight:bold; text-decoration:none; filter: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1);text-shadow: 0 1px 0 #ffffff;}
+a:hover.privilegeLayerButton6{ background:url(../i/layer/layerButton.gif) -110px -242px scroll no-repeat; text-decoration:none;}
+a:link.privilegeLayerButton7,a:visited.privilegeLayerButton7,a:active.privilegeLayerButton7{width:100px; height:37px; display:block; background:url(../i/layer/layerButton.gif) left -200px scroll no-repeat; color:#fff; text-align:center;  line-height:37px;font-size:14px; font-weight:bold; text-decoration:none; filter: DropShadow(Color=#D01200, OffX=1, OffY=1, Positive=1);text-shadow: 0 1px 0 #D01200;}
+a:hover.privilegeLayerButton7{ background:url(../i/layer/layerButton.gif) -110px -200px scroll no-repeat; text-decoration:none;}
+a:link.privilegeLayerButton8,a:visited.privilegeLayerButton8,a:active.privilegeLayerButton8{width:81px; height:28px; display:block; background:url(../i/layer/layerButton.gif) left -290px scroll no-repeat; color:#666; text-align:center;  line-height:28px;font-size:14px; font-weight:bold; text-decoration:none; filter: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1);text-shadow: 0 1px 0 #ffffff;}
+a:hover.privilegeLayerButton8{ background:url(../i/layer/layerButton.gif) -91px -290px scroll no-repeat; text-decoration:none;}
+
+/*2011.12.16*/
+.TipLayer {}
+.TipLayer .LayerContent {width:100%; position:relative; overflow:hidden;}
+.TipLayer .font14 {color:#42ABE7; font-size:14px;}
+.TipLayer .font12 {color:#666; font-size:12px;}
+.TipLayer .button {text-align:center;}
+.TipLayer .button a {display:inline-block; margin:0px 10px; float:none;}
+.TipLayer .close:link,.TipLayer .close:visited {width:27px; height:27px; position:absolute; top:0px; right:0px;  text-indent:-9999px;}
+
+.Layer1 {width:669px; height:374px; background:url(../i/layer/layer_bg1.png) no-repeat;}
+.Layer1 .font14 { text-align:center; padding-top:165px;}
+.Layer1 .font12 { text-align:center; padding-top:18px;}
+.Layer1 .button {padding:20px 0px;}
+
+.Layer2 {width:556px; height:249px; background:url(../i/layer/layer_bg2.png) no-repeat;}
+.Layer2 .font14 { text-align:center; padding-top:85px; }
+.Layer2 .font12 { text-align:center; padding-top:15px;}
+.Layer2 .button {padding:20px 0px;}
+.Layer2 i {font-style:normal; color:#D52A9F;}
+
+.Layer3 {width:556px; height:266px; background:url(../i/layer/layer_bg3.png) no-repeat;}
+.Layer3 .font14 { text-align:left; padding:45px 0 0 40px;}
+.Layer3 .font12 { text-align:left; padding:5px 0 0 40px; }
+.Layer3 .button {padding:20px 0px;}
+.Layer3 .textarea {padding:5px 0 0 40px;}
+.Layer3 .textarea textarea {width:430px; height:90px; border:1px #ccc solid; background:#fff; overflow:hidden;}
+.Layer3 .button {padding:5px 0 0 30px; text-align:left;}
+.Layer3 .button a {float:left;}
+
+.Layer4 {width:556px; height:342px; background:url(../i/layer/layer_bg4.png) no-repeat;}
+.Layer4 .font14 { text-align:center; padding-top:210px; color:#F25993;}
+.Layer4 .button {padding:20px 0px;}
+.Layer4 .button a {display:inline-block; margin:0px 10px;}
+
+/*佳缘桌面弹层*/
+.layerTable{width:591px; height:337px; background:url(../i/tableLayerBg.gif); margin:0 auto;position:absolute;z-index:1102;top:30%;left:30%;}
+.layerTableTop{height:30px; overflow:hidden;}
+a:link.layerTableClose,a:hover.layerTableClose,a:active.layerTableClose,a:visited.layerTableClose{width:60px; height:30px; text-decoration:none; display: block; float:right;}
+.layerTableBody{padding:230px 0 0 280px;}
+a:link.layerTableButton,a:active.layerTableButton,a:visited.layerTableButton{width:167px; height:46px; display:block; background:url(../i/tableLayerBotton.gif) 0 0 no-repeat scroll;}
+a:hover.layerTableButton{background:url(../i/tableLayerBotton.gif) 0 -46px no-repeat scroll;}
+a:link.layerTableLink,a:hover.layerTableLink,a:active.layerTableLink,a:visited.layerTableLink{ text-decoration:underline;color:#C6E4F5; margin-left:15px;}
+

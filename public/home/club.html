@@ -1,0 +1,623 @@
+<html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ä½³ç¼˜ä¿±ä¹éƒ¨_ä¸–çºªä½³ç¼˜äº¤å‹ç½‘</title>
+<link href="./css/base.css" rel="stylesheet" type="text/css" />
+<link href="./css/nav.css" rel="stylesheet" type="text/css"/>
+<link href="./css/jlb_pop.css" rel="stylesheet" type="text/css"/>
+<link type="text/css" rel="stylesheet" href="./css/module_open.css" >
+<link rel="stylesheet" type="text/css" href="./css/vipclub.css" />
+<link type="text/css" rel="stylesheet" href="./css/jy_ad.css" />
+<script type="text/javascript" src="./js/jy_ad.js"></script>
+<script type="text/javascript" src="./js/jquery-1.7.1.js" ></script>
+<script type="text/javascript" src="./js/nav.js"></script>
+<script type='text/javascript' src="./js/popup.js"></script>
+<script type="text/javascript" src="./js/pv.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script type="text/javascript">
+//è½®æ’­å›¾
+  function getStyle(obj, attr)
+  {
+    if(obj.currentStyle)
+    {
+      return obj.currentStyle[attr];
+    }
+    else
+    {
+      return getComputedStyle(obj, false)[attr];
+    }
+  }
+$().ready(function () {
+    var oPlayId=document.getElementById('slide_box');
+    var oUl=oPlayId.getElementsByTagName('ul')[0];
+    var oContent=oPlayId.getElementsByTagName('ul')[0].getElementsByTagName('li');
+    var oNav=oPlayId.getElementsByTagName('ul')[1].getElementsByTagName('li');
+    var iNow=0;
+    var timer=null;
+    var timerAutoPlay=null;
+    for(var i=0; i<oNav.length; i++)
+    {
+      oNav[i].index=i;
+      oNav[i].onclick=function()
+      {
+        iNow=this.index;
+        next();
+      };
+    }
+    function next()
+    {
+      if(iNow>=oNav.length)
+      {
+        iNow=0;
+      }
+      for(var i=0; i<oNav.length; i++)
+      {
+        oNav[i].className="";
+      }
+      startMove(-iNow*710);
+      oNav[iNow].className='btn_cur';
+      iNow++;//
+    }
+    function startMove(iTarget)
+    {
+      clearInterval(timer);
+      timer=setInterval(function(){
+        doMove(iTarget);
+      },30);
+    }
+
+    function doMove(iTarget)
+    {
+      var iSpeed=(iTarget-parseInt(getStyle(oUl, 'left')))/10;
+      iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);//ä¸Šé¢è¿™ä¸¤è¡Œå°±æ˜¯ç¼“å†²è¿åŠ¨çš„å…¬å¼ï¼Œå¹¶ä¸”è¦å–æ•´
+      oUl.style.left=parseInt(getStyle(oUl, 'left'))+iSpeed+'px';
+    }
+    timerAutoPlay=setInterval(next,5000);
+    oPlayId.onmouseover=function ()
+    {
+      clearInterval(timerAutoPlay);
+    };
+    oPlayId.onmouseout=function ()
+    {
+      clearInterval(timerAutoPlay);
+      timerAutoPlay=setInterval(next,5000);
+    };
+    iNow=0;
+  });
+$(function($){
+        send_jy_pv2('|1006770_7|');
+        send_jy_pv2('|1006770_8|usercp');
+  get_broadcast();
+  setInterval('get_broadcast()', 60000);
+  });
+  function get_broadcast(){
+    $.getJSON("/clubv2/ajax/club_broadcast.php",function(data){
+      $("#today_sign").html(data.today_sign);
+      $("#today_mission").html(data.today_mission);
+      var content = '';
+      for (var i = data.user_mission.length - 1; i >= 0 ; --i) {
+        var d = data.user_mission[i];
+        content += '<li class="clearfix">'+
+        '<div class="just">'+d.time_desc+'</div>'+
+        '<div class="member_info clearfix">'+
+        '<div class="arrow_ico"></div>'+
+        '<div class="fn-clear">'+
+        '<div class="pic4048 fl"><a target="_blank" href="'+d.url+'"><img src="'+d.avatar+'" /></a></div>'+
+        '<h6 class="p_details"><a target="_blank" href="'+d.url+'">'+d.nickname+'<br />'+'<span class="color_888">'+d.age+','+d.area+'</span></a></h6>'+
+        '</div>'+
+        '<div class="info"><p class="'+d.css+'">'+d.mission_desc.substr(0,13)+'</p></div>'+
+        '</div>'+
+        '</li> ';
+      }
+      $(".jlb_box .scrollpic ul").html(content);
+    });
+  }
+
+
+    function doexchange(fid){
+        $.get('/clubv2/ajax/gift_trade.php',{fid:fid},function(data){
+            result = eval('('+data+')');
+            if(result.alert == 3){//é”™è¯¯å¼¹å±‚
+                $("#exchangePop4 #fail_con").html(result.msg);
+                openWin('exchangePop4');
+            }else if(result.alert == 2){//æŠ¥è­¦å¼¹å±‚
+                $("#jddhpopup_2 .head1").html(result.header);
+                $("#jddhpopup_2 #alert_con").html(result.msg);
+                $("#jddhpopup_2 #btn").html(result.btn).attr('href',result.btn_url);
+                openWin('jddhpopup_2');
+            }else if(result.alert == 1){//æç¤ºå¼¹å±‚
+                $("#jddhpopup_1 .head2").html(result.msg);
+                openWin('jddhpopup_1');
+            }else{
+                $("#jddhpopup_0 #alert_con_new").html(result.msg);
+                $("#jddhpopup_0 .Aa2_2").attr('href',result.qkk_link);
+                openWin('jddhpopup_0');
+            }
+        });
+    }
+</script>
+
+<link href="./css/jlb.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="./css/jddh.css" />
+
+
+<!--[if lte IE 6]>
+<script type="text/javascript" src="http://images2.jyimg.com/w4/profile_new/j/dd_belatedpng.js"></script>
+<script>
+    DD_belatedPNG.fix('li,img,.pngfix,.rw_tit,.bb_tit,.today,.just,.title_bg,.cz_ico,.game_score1,.game_score2,.game_win,.game_failed,.game_equal,.banner_img');
+</script>
+<![endif]-->
+</head>
+<body id="club_body_c">
+<script type="text/javascript" src="./js/head_white.js"></script>
+<!--å¯¼èˆª B-->
+<div class="nav-wrap" id="navmod">
+	<div class="nav-mod fn-clear">
+		<h2 class="nav-title"><strong class="pngfix">ä¼šå‘˜ä¿±ä¹éƒ¨</strong></h2>
+		<ul class="nav-list fn-clear" id="nav">
+			<li class="active">
+                <a class="nav-list-item" href="index.php.htm" tppabs="http://www.jiayuan.com/club/index.php" onmousedown="send_jy_pv2('|1006770_1|')">é¦–é¡µ</a>
+                <span class="tarr-select"></span>
+            </li>
+			<li >
+				<a class="nav-list-item" href="mytask.php.htm" tppabs="http://www.jiayuan.com/club/mytask.php" onmousedown="send_jy_pv2('|1006770_0|')">é‡‘è±†ä»»åŠ¡</a>
+                <span class="tarr-select"></span>
+			</li>
+                        <li >
+				<a class="nav-list-item" href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=%2Fclub%2Findex.php&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=%2Fclub%2Findex.php&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/club/draw.php" onmousedown="send_jy_pv2('|1006770_5|')">æµ·åº•å®è—</a>
+                <span class="tarr-select"></span>
+			</li>
+			<li >
+				<a class="nav-list-item" href="gift.php.htm" tppabs="http://www.jiayuan.com/club/gift.php" onmousedown="send_jy_pv2('|1006770_4|')">é‡‘è±†æ¢ç¤¼</a>
+                <span class="tarr-select"></span>
+			</li>
+			<li >
+				<a class="nav-list-item" href="tehui.php.htm" tppabs="http://www.jiayuan.com/club/tehui.php" onmousedown="send_jy_pv2('|1006770_2|')">é™æ—¶æŠ¢å…‘</a>
+                <span class="tarr-select"></span>
+			</li>
+			<!--
+			<li>
+                <a class="nav-list-item" href="">ç©è½¬ä½³ç¼˜</a>
+                <span class="tarr-select"></span>
+            </li>
+        -->
+			<li class="bg-none">
+                <span class="tarr-select"></span>
+				<div class="nav-list-item-f">
+	                <a href="grade.php.htm" tppabs="http://www.jiayuan.com/club/grade.php">ä¸ªäººä¸­å¿ƒ<i class="tarr"></i></a>
+	                <div class="nav-list-s">
+	                    <dl><a href="grade.php.htm" tppabs="http://www.jiayuan.com/club/grade.php" onmousedown="send_jy_pv2('|1006770_3|')">æˆ‘çš„ç­‰çº§ä¿¡æ¯</a></dl>
+	                    <dl><a href="grade.php-info=gold_record.htm" tppabs="http://www.jiayuan.com/club/grade.php?info=gold_record">æˆ‘çš„é‡‘è±†è®°å½•</a></dl>
+	                    <dl><a href="trade.php.htm" tppabs="http://www.jiayuan.com/club/trade.php">æˆ‘çš„ç¤¼å“</a></dl>
+	                    <dl><a href="faq.php.htm" tppabs="http://www.jiayuan.com/club/faq.php">å¸¸è§é—®é¢˜</a></dl>
+	                </div>
+				</div>
+            </li>
+		</ul>
+	   <a class="go-back" href="javascript:if(confirm('http://usercp.jiayuan.com/  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://usercp.jiayuan.com/'" tppabs="http://usercp.jiayuan.com/">è¿”å›æˆ‘çš„ä½³ç¼˜</a>
+    </div>
+</div>
+<div class="placeholder"></div>
+<!--å¯¼èˆª E-->
+
+ <div class="top_bg">
+     <div class="main">
+       <div class="clearfix">
+       <!--æˆ‘çš„é‡‘è±† start -->
+              <!--ç«‹åˆ»ç™»å½•start -->
+<div class="qd_box" style="display:block;">
+          <h4 class="f_14  pt7">HIï¼æ¬¢è¿æ¥åˆ°ä½³ç¼˜ä¿±ä¹éƒ¨</h4>
+        <!-- æ”¹ -->
+        <div class="no_box">
+            åšä»»åŠ¡ï¼Œå‹¤ç™»å½•ï¼Œå¯ä»¥è·å¾—é‡‘è±†ã€çœ‹ä¿¡é‚®ç¥¨ç­‰æ›´å¤šé¢å¤–å¥–åŠ±ï¼é‡‘è±†è¶Šå¤šä¼šå‘˜ç­‰çº§è¶Šé«˜ï¼Œå¯ä»¥äº«å—æ›´å¤šä¼˜æƒ ï¼
+        </div>
+        <a class="qd_btn1 login_hook" href="javascript:;">ç«‹å³ç™»å½•ï¼æŸ¥çœ‹æˆ‘çš„ç­‰çº§ä¿¡æ¯</a>
+        <h6>æˆ‘çš„ç‰¹æƒï¼š</h6>
+        <ul class="tq">
+          <!--<li class="tqzb"><a href="grade.php#detail"></a></li>
+          -->
+          <li class="tq1"><a href="grade.php.htm#detail" tppabs="http://www.jiayuan.com/club/grade.php#detail"></a></li>
+          <li class="tq2"><a href="grade.php.htm#detail" tppabs="http://www.jiayuan.com/club/grade.php#detail"></a></li>
+          <li class="tq3"><a href="grade.php.htm#detail" tppabs="http://www.jiayuan.com/club/grade.php#detail"></a></li>
+          <li class="tq4"><a href="grade.php.htm#detail" tppabs="http://www.jiayuan.com/club/grade.php#detail"></a></li>
+          <li class="tq5"><a href="grade.php.htm#detail" tppabs="http://www.jiayuan.com/club/grade.php#detail"></a></li>
+        </ul>
+      </div>
+      <!--ç«‹åˆ»ç™»å½•end -->
+            <!--æˆ‘çš„é‡‘è±†end -->
+      <!--è½®æ’­å›¾start -->
+       <div class="slide_box ml20" id="slide_box">
+         <ul class="slide clearfix">
+                    <li><a href="javascript:if(confirm('http://date.jiayuan.com/index.php?from=juleshou  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://date.jiayuan.com/index.php?from=juleshou'" tppabs="http://date.jiayuan.com/index.php?from=juleshou" target="_blank" onmousedown="send_jy_pv2('|1020080_10|usercp');" >
+                  <img src="./img/20160825025212327.jpg" alt="" />
+                </a></li>
+                        <li><a href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=%2Fclub%2Findex.php&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=%2Fclub%2Findex.php&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/club/draw.php" target="_blank" onmousedown="send_jy_pv2('|1020080_9|usercp');" >
+                  <img src="./img/20160108102618353.jpg" alt="" />
+                </a></li>
+                        <li><a href="javascript:if(confirm('https://jr.jiayuan.com/showhome/index?f=27&next_url=https%3A%2F%2Fjr.jiayuan.com%2FzeroBuy  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ´ËÒ»µØÖ·Ê¹ÓÃÉĞÎ´Ö§³ÖµÄĞ­Òé (ÀıÈç£¬gopher)¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='https://jr.jiayuan.com/showhome/index?f=27&next_url=https%3A%2F%2Fjr.jiayuan.com%2FzeroBuy'" tppabs="http://www.jiayuan.com/jinrong/jrpassport.php?f=27&next_url=https://jr.jiayuan.com/zeroBuy" target="_blank" onmousedown="send_jy_pv2('|1020080_15|usercp');" >
+                  <img src="./img/20160719025309133.jpg" alt="" />
+                </a></li>
+                        <li><a href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=%2Fclubv2%2Fxiaozhu.php&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=%2Fclubv2%2Fxiaozhu.php&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/clubv2/xiaozhu.php" target="_blank" onmousedown="send_jy_pv2('|1020080_14|usercp');" >
+                  <img src="./img/20160901115104120.jpg"  alt="" />
+                </a></li>
+                        <li><a href="javascript:if(confirm('http://game.jiayuan.com/  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://game.jiayuan.com/'" tppabs="http://game.jiayuan.com/" target="_blank" onmousedown="send_jy_pv2('|1020080_13|usercp');" >
+                  <img src="./img/20160817021128221.jpg"  alt="" />
+                </a></li>
+                       </ul>
+         <ul class="slide_btn clearfix">
+                         <li class="btn_cur"></li>
+                         <li ></li>
+                         <li ></li>
+                         <li ></li>
+                         <li ></li>
+                     </ul>
+
+       </div>
+       <!--è½®æ’­å›¾end -->
+        </div>
+     </div>
+ </div>
+ <div class="main pt15 clearfix">
+        <!--ä¿±ä¹éƒ¨æ’­æŠ¥start -->
+        <div class="fl bb_left">
+           <h4 class="bb_tit">ä¿±ä¹éƒ¨æ’­æŠ¥</h4>
+           <div class="bb_box clearfix">
+             <div class="today_box clearfix">
+              <div class="today">ä»Šå¤©</div>
+              <div class="qd_member">
+                å·²æœ‰<span id="today_sign">0</span>äººç­¾åˆ°<br>
+                <span id="today_mission">0</span>äººå®Œæˆäº†ä»»åŠ¡
+              </div>
+            </div>
+              <!--æ»šåŠ¨start -->
+              <div class="jlb_box clearfix">
+               <div class="scrollpic">
+                 <ul>
+             </ul>
+           </div>
+         </div>
+         <!--æ»šåŠ¨ end -->
+       </div>
+       <!--äº¤å‹è®²å ‚ start-->
+<h4 class="rw_tit mt30">ä½³ç¼˜äº¤å‹è¯¾å ‚</h4>
+<ul class="new_list">
+<li class="clearfix">
+   <div class="pic10265 fl"><a href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fbmcenter%2F&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fbmcenter%2F&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/bmcenter/"><img src="./img/20140903020307960.jpg" ></a></div>
+   <div class="sc_text">
+<h6><a href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fbmcenter%2F&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fbmcenter%2F&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/bmcenter/" target="_blank" class="a_gray_333 fb">æ‡‚ä½ äº¤å‹æ•°æ®ä¸­å¿ƒ</a></h6>
+<p><a href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fbmcenter%2F&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fbmcenter%2F&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/bmcenter/" target="_blank" class="a_gray_999">é€šè¿‡åˆ†ææ‚¨çš„äº¤å‹è¡Œä¸ºï¼Œå¸®ä½ æå‡äº¤å‹æ•ˆç‡</a></p>
+   </div>
+</li>
+<li class="clearfix">
+   <div class="pic10265 fl"><a href="javascript:if(confirm('http://diary.jiayuan.com/subject/zhuantihuizong.html  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://diary.jiayuan.com/subject/zhuantihuizong.html#2'" tppabs="http://diary.jiayuan.com/subject/zhuantihuizong.html#2"><img src="./img/20140811054901918.jpg" ></a></div>
+   <div class="sc_text">
+<h6><a href="javascript:if(confirm('http://diary.jiayuan.com/subject/zhuantihuizong.html  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://diary.jiayuan.com/subject/zhuantihuizong.html#2'" tppabs="http://diary.jiayuan.com/subject/zhuantihuizong.html#2" target="_blank" class="a_gray_333 fb">å©šæ‹æƒ…æ„Ÿç ”ç©¶é™¢</a></h6>
+<p><a href="javascript:if(confirm('http://diary.jiayuan.com/subject/zhuantihuizong.html  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://diary.jiayuan.com/subject/zhuantihuizong.html#2'" tppabs="http://diary.jiayuan.com/subject/zhuantihuizong.html#2" target="_blank" class="a_gray_999">å®˜æ–¹å‡ºå“æƒ…æ„Ÿç ”ç©¶ï¼Œè§£è¯»å•èº«å¿ƒæ€</a></p>
+   </div>
+</li>
+<li class="clearfix">
+   <div class="pic10265 fl"><a href="javascript:if(confirm('http://diary.jiayuan.com/subject/jiaoyoubaike.html  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://diary.jiayuan.com/subject/jiaoyoubaike.html'" tppabs="http://diary.jiayuan.com/subject/jiaoyoubaike.html"><img src="./img/20140624035346814.png" ></a></div>
+   <div class="sc_text">
+<h6><a href="javascript:if(confirm('http://diary.jiayuan.com/subject/jiaoyoubaike.html  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://diary.jiayuan.com/subject/jiaoyoubaike.html'" tppabs="http://diary.jiayuan.com/subject/jiaoyoubaike.html" target="_blank" class="a_gray_333 fb">æ–°ä¼šå‘˜å®æˆ˜æ‰‹å†Œ</a></h6>
+<p><a href="javascript:if(confirm('http://diary.jiayuan.com/subject/jiaoyoubaike.html  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://diary.jiayuan.com/subject/jiaoyoubaike.html'" tppabs="http://diary.jiayuan.com/subject/jiaoyoubaike.html" target="_blank" class="a_gray_999">ä¸ºä½ å…¨é¢è®²è§£ç½‘ç»œäº¤å‹æ”»ç•¥ï¼Œé©¬ä¸Šå­¦ä¹ ä¸€ä¸‹</a></p>
+   </div>
+</li>
+</ul>
+<!--äº¤å‹è®²å ‚ end -->
+<!--å¸¸è§é—®é¢˜ start-->
+<h4 class="rw_tit mt10">å¸¸è§é—®é¢˜</h4>
+<ul class="col_blue question_list">
+<li><a href="faq.php.htm#40232" tppabs="http://www.jiayuan.com/club/faq.php#40232">å¦‚ä½•æå‡ä¼šå‘˜ç­‰çº§ï¼Ÿä¼šä¸ä¼šé™çº§ï¼Ÿ</a></li>
+<li><a href="faq.php.htm#40231" tppabs="http://www.jiayuan.com/club/faq.php#40231">ä¼šå‘˜å‡çº§ä¼šæ¶ˆè€—é‡‘è±†å—ï¼Ÿ</a></li>
+<li><a href="faq.php.htm#40230" tppabs="http://www.jiayuan.com/club/faq.php#40230">å¦‚ä½•è·å¾—é‡‘è±†ï¼Ÿå¤§å®¶å¾—åˆ°çš„é‡‘è±†ä¸€æ ·å¤šå—ï¼Ÿ</a></li>
+<li><a href="faq.php.htm#40228" tppabs="http://www.jiayuan.com/club/faq.php#40228">é‡‘è±†æœ‰ä»€ä¹ˆç”¨ï¼Ÿä¼šä¸ä¼šè¿‡æœŸï¼Ÿ</a></li>
+</ul>
+<!--å¸¸è§é—®é¢˜ end -->
+
+<!-- released time 2015-09-16 16:46:14 -->     </div>
+            <!--ä¿±ä¹éƒ¨æ’­æŠ¥ end -->
+
+   <div class="right_main">
+    <!--åšä»»åŠ¡èµšé‡‘è±†start -->
+         <div class="clearfix">
+        <h4 class="rw_tit fl"><a href="mytask.php.htm" tppabs="http://www.jiayuan.com/club/mytask.php">åšä»»åŠ¡èµšé‡‘è±†</a></h4>
+        <a class="fr rw_more a_gray_666 lh40" href="mytask.php.htm" tppabs="http://www.jiayuan.com/club/mytask.php" onmousedown="send_jy_pv2('|1006770_13|');">æ›´å¤š&gt;</a>
+     </div>
+     <div class="list_bg">
+        <div class="cz_ico"></div>
+          <ul>
+                     <li>
+              <div><img src="./img/rw_ypfx.jpg" /></div>
+                <div class="clearfix pt10 pl8 pr10">
+                   <div class="fl col_black lh18">
+                    <a href="http://www.jiayuan.com/club/mytask.php#task_info_79" title="ä»˜è´¹å‘ä¿¡50å°">ä»˜è´¹å‘ä¿¡50å°</a>
+                                      </div>
+                                        <a class="fr btn_7632" target="_blank" href="http://www.jiayuan.com/usercp/jymatch_matrix.php" tid="79">åšä»»åŠ¡</a>
+                                    </div>
+             <div class="num_box">
+               <p class="f_gray_999">2694äººå·²å®Œæˆ</p>
+                 <p class="f_gray_666 ico_mid" id="award_79">ä»»åŠ¡å¥–åŠ±ï¼š
+                  <span class="col_pink">200</span><img src="./img/ico2.png" title="200é‡‘è±†" />
+                                  </p>
+             </div>
+           </li>
+                     <li>
+              <div><img src="./img/rw_ydlx.jpg" /></div>
+                <div class="clearfix pt10 pl8 pr10">
+                   <div class="fl col_black lh18">
+                    <a href="http://www.jiayuan.com/club/mytask.php#task_info_65" title="çœ‹ä¿¡80å°">çœ‹ä¿¡80å°</a>
+                                      </div>
+                                        <a class="fr btn_7632" target="_blank" href="http://www.jiayuan.com/msg" tid="65">åšä»»åŠ¡</a>
+                                    </div>
+             <div class="num_box">
+               <p class="f_gray_999">262149äººå·²å®Œæˆ</p>
+                 <p class="f_gray_666 ico_mid" id="award_65">ä»»åŠ¡å¥–åŠ±ï¼š
+                  <span class="col_pink">200</span><img src="./img/ico2.png" title="200é‡‘è±†" />
+                                  </p>
+             </div>
+           </li>
+                     <li>
+              <div><img src="./img/rw_zmxy.jpg" /></div>
+                <div class="clearfix pt10 pl8 pr10">
+                   <div class="fl col_black lh18">
+                    <a href="http://www.jiayuan.com/club/mytask.php#task_info_104" title="èŠéº»ä¿¡ç”¨è®¤è¯">èŠéº»ä¿¡ç”¨è®¤è¯</a>
+                                      </div>
+                                        <a class="fr btn_7632" target="_blank" href="http://www.jiayuan.com/usercp/approve/zmxyentity.php" tid="104">åšä»»åŠ¡</a>
+                                    </div>
+             <div class="num_box">
+               <p class="f_gray_999">275514äººå·²å®Œæˆ</p>
+                 <p class="f_gray_666 ico_mid" id="award_104">ä»»åŠ¡å¥–åŠ±ï¼š
+                  <span class="col_pink">200</span><img src="./img/ico2.png" title="200é‡‘è±†" />
+                                  </p>
+             </div>
+           </li>
+                   </ul>
+
+     </div>
+     <!--åšä»»åŠ¡èµšé‡‘è±† end -->
+          <!--é‡‘è±†æ¢ç¤¼start -->
+     <div class="clearfix mt15">
+        <h4 class="rw_tit fl"><a href="gift.php.htm" tppabs="http://www.jiayuan.com/club/gift.php">é‡‘è±†æ¢ç¤¼</a></h4>
+        <a class="fr rw_more a_gray_666 lh40" href="gift.php.htm" tppabs="http://www.jiayuan.com/club/gift.php" onmousedown="send_jy_pv2('|1006770_14|');">æ›´å¤š&gt;</a>
+     </div>
+   <div class="list_bg1">
+         <ul class="clearfix">
+                      <li>
+              <div><img src="./img/kxyp_b.jpg" alt="" /></div>
+              <div class="clearfix pt10 pl8 pr10">
+                 <div class="fl lh18">
+                   <p class=" f_gray_333"></p>
+                                       <p class="ico_mid f_gray_999"><del class="pr10">ï¿¥3ä½³ç¼˜å®</del><span class=" col_pink">200</span><img src="./img/ico2.png" /></p>
+                                  </div>
+                 <a href="http://www.jiayuan.com/club/tehui.php#goods919694" onmousedown="send_jy_pv2('|1006770_10|');" class="fr btn_7632_ljl">å…‘æ¢</a>
+              </div>
+              <div class="num_box">
+             <p class="f_gray_999">ä»…å‰©244ä¸ª</p>
+             <p class="col_pink lxftime" endtime="09/04/2016 14:00:00" lxfday="no"></p>
+             </div>
+            </li>
+                      <li>
+              <div><img src="./img/vip7.jpg" alt="" /></div>
+              <div class="clearfix pt10 pl8 pr10">
+                 <div class="fl lh18">
+                   <p class=" f_gray_333"></p>
+                                       <p class="ico_mid f_gray_999"><del class="pr10">ï¿¥20ä½³ç¼˜å®</del><span class=" col_pink">700</span><img src="./img/ico2.png" /></p>
+                                  </div>
+                 <a href="http://www.jiayuan.com/club/tehui.php#goods919692" onmousedown="send_jy_pv2('|1006770_10|');" class="fr btn_7632_ljl">å…‘æ¢</a>
+              </div>
+              <div class="num_box">
+             <p class="f_gray_999">ä»…å‰©1ä¸ª</p>
+             <p class="col_pink lxftime" endtime="09/04/2016 14:00:00" lxfday="no"></p>
+             </div>
+            </li>
+                      <li>
+              <div><img src="./img/lq.jpg" alt="" /></div>
+              <div class="clearfix pt10 pl8 pr10">
+                 <div class="fl lh18">
+                   <p class=" f_gray_333"></p>
+                                       <p class="ico_mid f_gray_999"><del class="pr10">ï¿¥1ä½³ç¼˜å®</del><span class=" col_pink">150</span><img src="./img/ico2.png" /></p>
+                                  </div>
+                 <a href="http://www.jiayuan.com/club/tehui.php#goods919690" onmousedown="send_jy_pv2('|1006770_10|');" class="fr btn_7632_ljl">å…‘æ¢</a>
+              </div>
+              <div class="num_box">
+             <p class="f_gray_999">ä»…å‰©175ä¸ª</p>
+             <p class="col_pink lxftime" endtime="09/04/2016 14:00:00" lxfday="no"></p>
+             </div>
+            </li>
+                    </ul>
+
+     </div>
+
+     <div class="list_bg1 mt15">
+         <ul class="clearfix">
+                      <li>
+              <div><img src="./img/20160831110634694.jpg" alt="" /></div>
+              <div class="clearfix pt10 pl8 pr10">
+                 <div class="fl lh18">
+                   <p class=" f_gray_333" title="æ–°ç”¨æˆ·ç«‹äº«3%åŠ æ¯">æ–°ç”¨æˆ·ç«‹äº«3%åŠ </p>
+                     <p class="ico_mid"><span class=" col_pink">100</span><img src="./img/ico2.png" /></p>
+                 </div>
+                 <a href="gift.php.htm#gift1" tppabs="http://www.jiayuan.com/club/gift.php#gift1" class="fr btn_7632_ljl">å…‘æ¢</a>
+              </div>
+            </li>
+                      <li>
+              <div><img src="./img/20131115114117123.jpg" alt="" /></div>
+              <div class="clearfix pt10 pl8 pr10">
+                 <div class="fl lh18">
+                   <p class=" f_gray_333" title="æŸ¥çœ‹è°çœ‹è¿‡æˆ‘">æŸ¥çœ‹è°çœ‹è¿‡æˆ‘</p>
+                     <p class="ico_mid"><span class=" col_pink">1600</span><img src="./img/ico2.png" /></p>
+                 </div>
+                 <a href="gift.php.htm#gift3" tppabs="http://www.jiayuan.com/club/gift.php#gift3" class="fr btn_7632_ljl">å…‘æ¢</a>
+              </div>
+            </li>
+                      <li>
+              <div><img src="./img/20160831110611653.jpg" alt="" /></div>
+              <div class="clearfix pt10 pl8 pr10">
+                 <div class="fl lh18">
+                   <p class=" f_gray_333" title="è…¾ç‰›ç½‘æä¾›çš„200å…ƒæŠ•èµ„åŸºé‡‘">è…¾ç‰›ç½‘æä¾›çš„20</p>
+                     <p class="ico_mid"><span class=" col_pink">300</span><img src="./img/ico2.png" /></p>
+                 </div>
+                 <a href="gift.php.htm#gift4" tppabs="http://www.jiayuan.com/club/gift.php#gift4" class="fr btn_7632_ljl">å…‘æ¢</a>
+              </div>
+            </li>
+                   </ul>
+     </div>
+     <!--é‡‘è±†æ¢ç¤¼ end-->
+
+     <!--åˆ®å¥–start -->
+     <ul class="cj_list clearfix">
+      <li class="">
+        <a href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=%2Fclub%2Findex.php&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=%2Fclub%2Findex.php&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/club/draw.php"><img src="./img/cj_pic1.png" /></a>
+        <div class="btm_bg"></div>
+        <div class="btm_text clearfix">
+          <p class="fl"><span class="">72793747</span>äººå‚ä¸</p>
+            <a class="fr" href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=%2Fclub%2Findex.php&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=%2Fclub%2Findex.php&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/club/draw.php">è¯•è¯•æ‰‹æ°”&gt;</a>
+        </div>
+        </li>
+        <li class="r">
+        <a href="draw.php-v=3.htm" tppabs="http://www.jiayuan.com/club/draw.php?v=3"><img src="./img/cj_pic2.png" /></a>
+         <div class="btm_bg"></div>
+        <div class="btm_text clearfix">
+          <p class="fl"><span class="">5231420</span>äººå‚ä¸</p>
+            <a class="fr" href="draw.php-v=3.htm" tppabs="http://www.jiayuan.com/club/draw.php?v=3">è¯•è¯•æ‰‹æ°”&gt;</a>
+        </div>
+        </li>
+     </ul>
+     <!--åˆ®å¥–end -->
+     </div>
+
+
+                 <!-- é‡‘è±†æ¢ç¤¼è­¦å‘Šå¼¹å±‚å¼€å§‹ -->
+            <div  class="op_box jddhpopup" style="display:none" id="jddhpopup_2">
+                <div class="op_subbg">
+                    <h4><a href="javascript:;" class="op_close" onclick="closeWin('jddhpopup_2');"></a>ä¸–çºªä½³ç¼˜æ¸©é¦¨æç¤º</h4>
+                    <div class="op_main">
+                        <div class="club_tipPopMain">
+                            <div class="formBox">
+                                <p class="Hhead1 ml15 pl55 pt10 mt10 h35">
+                                    <span class="head1"></span>
+                                </p>
+                                <p class="Pp1 ml15 pl55 pr20" id="alert_con"></p>
+                                <p class="PBtn fn-clear mt10">
+                                    <a href="" class="Aa1_2 ml139 fn-left" onclick="closeWin('jddhpopup_2');" id="btn"></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- é‡‘è±†æ¢ç¤¼è­¦å‘Šå¼¹å±‚ç»“æŸ -->
+            <!-- é‡‘è±†æ¢ç¤¼æˆåŠŸå¼¹å±‚å¼€å§‹ -->
+            <div  class="op_box jddhpopup" style="display:none" id="jddhpopup_0">
+                <div class="op_subbg">
+                    <h4><a href="javascript:;" class="op_close" onclick="closeWin('jddhpopup_0');window.location.reload();"></a>ä¸–çºªä½³ç¼˜æ¸©é¦¨æç¤º</h4>
+                    <div class="op_main">
+                        <div class="club_tipPopMain">
+                            <div class="formBox">
+                                <p class="Hhead2 ml65 pl55 pt10 mt10 h35">
+                                    <span class="head1">å…‘æ¢æˆåŠŸ!</span>
+                                </p>
+                                <p class="Pp1 ml65 pl55 pb15" id="alert_con_new">æœ¬æ¬¡æ¶ˆè´¹<span class="f_pink">0</span>é‡‘è±†ï¼Œæ‚¨çš„é‡‘è±†ä½™é¢ä¸º<span class="f_pink">450</span></p>
+                                <p class="PBtn fn-clear mt10">
+                                    <a href="javascript:;" class="Aa1_1 ml154 fn-left" onclick="closeWin('jddhpopup_0');window.location.reload();">ç¡®å®š</a>
+                                    <a href="" class="Aa2_2 ml24 fn-left" target="_blank">å»çœ‹çœ‹</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- é‡‘è±†æ¢ç¤¼æˆåŠŸå¼¹å±‚ç»“æŸ -->
+            <!-- çš®è‚¤é¢„è§ˆå¼¹å±‚å¼€å§‹ -->
+            <div class="jy_pop" id="dress_view" style="display: none;z-index: 999">
+                <div class="pop_bg">
+                    <div class="pop_colsed" onclick="closeWin('dress_view');"></div>
+                </div>
+            </div>
+
+ </div>
+
+<div id="bg"></div>
+<!--é¢†å–å¼¹çª—  å¼€å§‹-->
+<div class="op_box op_clubTip" id="taskTipPop">
+    <div class="op_subbg">
+        <h4><a class="op_close" href="javascript:;" onclick="closeWin('taskTipPop');window.location.reload();"></a></h4>
+        <div class="op_main">
+			<div class="club_tipPopMain">
+				<div class="tipBox">
+					<br /><br />
+					<p class="f_gray_666"></p>
+					<br /><br />
+				</div>
+				<div class="btnBox"><a href="javascript:;" onclick="closeWin('taskTipPop');window.location.reload();" class="btnBg orangeBtn_7932">ç¡®å®š</a></div>
+			</div>
+        </div>
+    </div>
+</div>
+<!--é¢†å–å¼¹çª— ç»“æŸ-->
+<!--å‡çº§ start -->
+<div style="display: none;" class="op_box" id="upgrade_pop">
+    <div class="op_subbg">
+        <h4><a href="javascript:;" class="op_close" onclick="closeWin('upgrade_pop');"></a>æç¤º</h4>
+        <div class="op_level">
+          <h5 class="f_gray_333 f_22">æ­å–œï¼Œæ‚¨å·²ç»å‡çº§åˆ°<span class="pop_col">S1</span>ä¼šå‘˜</h5>
+
+             	             	        </div>
+        <a class="pop_btn4 m_auto" onclick="closeWin('upgrade_pop');" href="javascript:;">çŸ¥é“äº†</a>
+    </div>
+</div>
+<!--å‡çº§ end -->
+<!-- vipæç¤ºå¼¹å±‚ å¼€å§‹ -->
+<div class="op_box width570" id="JYclub_VipPop" style="display:none">
+  <div class="op_subbg">
+      <h4><a href="javascript:void(0);" class="op_close" onclick="window.location.reload();"></a>ä¸–çºªä½³ç¼˜æ¸©é¦¨æç¤º</h4>
+      <div class="degrees-layer">
+      	<div class="deg-box">
+             <div class="deg-icon"><span class="vip-icon"></span></div>
+             <div class="deg-intro"><a href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fusercp%2Fservice%2Fupgrade.php%3Ffrom%3D%26src_key%3Dvip_club&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fusercp%2Fservice%2Fupgrade.php%3Ffrom%3D%26src_key%3Dvip_club&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/usercp/service/upgrade.php?src_key=vip_club" target="_blank" onmousedown="send_jy_pv2('|1011196_4|')">å¼€é€šVIPä¼šå‘˜</a>å®Œæˆæ­¤é¡¹ä»»åŠ¡ï¼Œå¯è·å¾—<strong class="pink" id="vipgold"></strong>é‡‘è±†å¥–åŠ±ï¼Œæ¯”æ™®é€šä¼šå‘˜å¤š<strong class="pink" id="addgold"></strong>é‡‘è±†ï¼Œä¼šå‘˜ç­‰çº§å‡çº§æ›´å¿«é€Ÿï¼</div>
+         </div>
+      </div>
+
+      <div class="degrees-layer btn-center"><a class="btn" href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fusercp%2Fservice%2Fupgrade.php%3Ffrom%3D%26src_key%3Dvip_club&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fusercp%2Fservice%2Fupgrade.php%3Ffrom%3D%26src_key%3Dvip_club&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/usercp/service/upgrade.php?src_key=vip_club" target="_blank" onmousedown="send_jy_pv2('|1011196_4|')"><i></i><em>å¼€é€šVIPä¼šå‘˜æœåŠ¡</em></a></div>
+      <div class="intro-member">
+        <h5 class="vip-member"><a class="blue" href="javascript:if(confirm('http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fusercp%2Fservice%2Fupgrade.php%3Ffrom%3D%26src_key%3Dvip_club&refrer=http://www.jiayuan.com&host=0  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://login.jiayuan.com/?pre_url=http%3A%2F%2Fwww.jiayuan.com%2Fusercp%2Fservice%2Fupgrade.php%3Ffrom%3D%26src_key%3Dvip_club&refrer=http://www.jiayuan.com&host=0'" tppabs="http://www.jiayuan.com/usercp/service/upgrade.php?src_key=vip_club" target="_blank" onmousedown="send_jy_pv2('|1011196_4|')">æŸ¥çœ‹æ›´å¤šç‰¹æƒ</a>VIPç»™åŠ›ç‰¹æƒï¼š</h5>
+        <ul class="vip-detail fn-clear">
+            <li><i class="f-icon"></i>æŸ¥çœ‹è°çœ‹è¿‡æˆ‘</li>
+            <li><i class="s-icon"></i>ç¬¦åˆå¯¹æ–¹æ‹©å‹è¦æ±‚</li>
+            <li><i class="t-icon"></i>æŸ¥çœ‹æœ€è¿‘ç™»å½•æ—¶é—´</li>
+            <li><i class="c-icon"></i>æœç´¢çœ‹ä¿¡/é’»çŸ³ä¼šå‘˜</li>
+            <li><i class="m-icon"></i>å‘å‡ºä¿¡ä»¶ç½®é¡¶</li>
+            <li><i class="q-icon"></i>é™å®šæ‹©å¶æ¡ä»¶</li>
+        </ul>
+    </div>
+  </div>
+</div>
+<!-- ç™»å½•å¼¹å‡ºç»“æŸ -->
+<!-- vipæç¤ºå¼¹å±‚ ç»“æŸ -->
+<script type='text/javascript' src="./js/foot.js"></script>
+ <script type="text/javascript" src="./js/w4-simple.js"></script>
+<script type="text/javascript">
+	$().ready(function () {
+		send_jy_pv2('|1014070_10|');	//pv
+		$('.login_hook,.btn_7632,.zrw,.jxz').on('click', function () {
+			showLogin();
+			return false;
+		});
+		$(window).scroll(function (e) {
+			$(window).unbind(e);
+			showLogin();
+		});
+	});
+	function showLogin() {
+		send_jy_pv2('|1014070_11|');	//ç™»å½•æ˜¾ç¤ºæ¬¡æ•°
+		loginWindow.openlogindiv('login',location.href, function(){location.reload();});
+	}
+</script>
+</body>
+</html>

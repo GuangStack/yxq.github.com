@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="佳缘约会吧,北京约会吧,约会吧,约会,我们约会吧,北京约会吧交友,约会吧交友,婚恋交友,征婚交友,网上交友,婚恋,征婚,相亲,单身,白领相亲,白领征婚,白领交友,婚恋网,交友网,北京征婚,上海征婚,广州征婚,深圳征婚,北京交友,上海交友,广东交友,深圳交友" />
+<meta name="description" content="佳缘约会吧：是世纪佳缘线下体验式婚恋交友平台。结合世纪佳缘十年红娘经验,依托优质网络资源,多样的互动交友形式,让爱情在佳缘约会吧触电。" />
+<title>佳缘约会吧_北京约会吧_世纪佳缘交友网</title>
+<link rel="stylesheet" type="text/css" href="./css/main.css">
+<link rel="stylesheet" type="text/css" href="./css/reset.css">
+<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./js/pv.js"></script>
+<script type="text/javascript" src="./js/head_common.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<script type="text/javascript" src="./js/lazyload.min.js"></script>
+</head>
+<body>
+<div class="date_wrap_white">
+	<link rel="stylesheet" type="text/css" href="./css/header.css">
+	<script type="text/javascript" src="./js/love_location_array.js"></script>
+	<script type="text/javascript" src="./js/header.js"></script>
+	<div class="date_header fn-clear">
+		<a href="#" class="header_logo"><img src="./img/header_logo.jpg"></a>
+		<div class="header_city">
+		</div>
+		<img src="./img/header_slogan.jpg" class="header_slogan">
+	</div>
+	<div class="date_nav fn-clear">
+		<ul class="nav_list fn-clear">
+			<li style="display:block;"><a href="javascript:;" class="cur" onmousedown="send_jy_pv2('|1031771_0|'+HEAD_USER.uid);">首页</a></li>
+			<li style="display:block;"><a href="http://date.jiayuan.com/eventslist.php" onmousedown="send_jy_pv2('|1031771_2|'+HEAD_USER.uid);" target="_blank">热门活动</a></li>
+			<li style="display:block;"><a href="http://date.jiayuan.com/userlist.php" onmousedown="send_jy_pv2('|1031771_8|'+HEAD_USER.uid);" target="_blank">最新会员</a></li>
+			<li style="display:block;"><a href="http://date.jiayuan.com/shoplist.php" onmousedown="send_jy_pv2('|1031771_10|'+HEAD_USER.uid);" target="_blank">全国体验店</a></li>
+			<li style="display:block;"><a href="http://date.jiayuan.com/potentialinvestors.php" onmousedown="send_jy_pv2('|1031771_16|'+HEAD_USER.uid);" target="_blank">招商加盟</a></li>
+		</ul>
+		<!-- 登录状态 begin -->
+		<div class="nav_login">
+		</div>
+		<!-- 登录状态 end -->
+		<a href="http://www.jiayuan.com" class="nav_return" target="_blank">返回佳缘</a>
+	</div>
+</div>
+
+<!-- 
+<div class="date_banner"><a onmousedown="send_jy_pv2('|1031989_2|'+HEAD_USER.uid);" href="javascript:Date_show_tc('mflq',867,0,0);"></a></div>
+
+ -->
+<!-- banner轮播 begin -->
+<div id="date_banner" class="date_banner">
+	<ul class="banner_content">
+		<li>
+			<a onmousedown="send_jy_pv2('|1031989_2|'+HEAD_USER.uid);" href="javascript:Date_show_tc('mflq',867,0,0);" style="background-image:url(./img/date_banner.jpg)"></a>
+		</li>
+		<li>
+			<a href="javascript:;" style="background-image:url(./img/date_banner1.jpg)"></a>
+		</li>
+		<!-- <li>
+			<a href="#" style="background-image:url(http://images1.jyimg.com/w4/date/v3/i/date_banner3.jpg)"></a>
+		</li> -->
+	</ul>
+	<div id="banner_list" class="banner_list">
+		<a href="javascript:;" class="cur">1</a>
+		<a href="javascript:;" >2</a>
+		<!-- <a href="javascript:;" >3</a> -->
+	</div>
+	<div class="banner_btn">
+		<a href="javascript:;" class="banner_prev fixPNG">&lt;</a>
+		<a href="javascript:;" class="banner_next fixPNG">&gt;</a>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	var bannerSlider = new Slider($('#date_banner'), {
+		time: 5000,
+		delay: 400,
+		event: 'click',
+		auto: true,
+		mode: 'fade',
+		controller: $('#banner_list'),
+		activeControllerCls: 'cur'
+	});
+	$('#banner_list').css('margin-left',-$('#banner_list').children().length*18/2)
+	$('#date_banner .banner_prev').click(function() {
+		bannerSlider.prev()
+	});
+	$('#date_banner .banner_next').click(function() {
+		bannerSlider.next()
+	});
+})
+</script>
+<!-- banner轮播 end -->
+
+<script type="text/javascript">
+	$(function(){
+		send_jy_pv2('|date_all_pvuvx|'+HEAD_USER.uid);
+		send_jy_pv2('|1031769_0|'+HEAD_USER.uid);
+		var from = "";
+		var from_key = "date_pc_pvuv_"+from;
+		if($.trim(from) != ''){
+			send_jy_pv2('|'+"date_from_all"+from+'|'+HEAD_USER.uid);
+			send_jy_pv2('|'+from_key+'|'+HEAD_USER.uid);
+			jy_head_function.set_cookie('DATE_FROM',from);
+		}
+		send_jy_pv2('|date_ym_puv_11|'+HEAD_USER.uid);
+	})
+</script>
+<div class="date_wrap_gray">
+	<div class="date_act">
+		<h1 class="date_title">热门活动<a href="http://date.jiayuan.com/eventslist.php" onmousedown="send_jy_pv2('|1031989_10|'+HEAD_USER.uid);">更多&nbsp;&gt;</a></h1>
+		<div class="act_list fn-clear">
+								<div class="act_detail">
+				<div class="act_img"><a href="http://date.jiayuan.com/eventsdetail.php?id=1585" onmousedown="send_jy_pv2('|1031989_16|'+HEAD_USER.uid);"><img src="./img/118274101d.jpg" class='activitys' width='378px'></a></div>
+				<h2 class="fn-clear"><span>8分钟约会</span><em>26669人参加过</em></h2>
+				<p>8分钟约会也叫8分钟交友，它的前身是“快速约会（Speed Dating)”，源于犹太人的传统习惯，年轻...</p>
+				<a href="javascript:Date_show_tc('mfty',1585,0,0);" class="act_btn" onmousedown="send_jy_pv2('|1031989_14|'+HEAD_USER.uid);">免费体验</a>
+			</div>
+											<div class="act_detail">
+				<div class="act_img"><a href="http://date.jiayuan.com/activityreviewdetail.php?id=1586" onmousedown="send_jy_pv2('|1031989_16|'+HEAD_USER.uid);"><img src="./img/1472630539.jpeg" class='activitys' width='378px'></a></div>
+				<h2 class="fn-clear"><span>亲密搭档</span><em>1348人参加过</em></h2>
+				<p>先选出与你有眼缘的队友~男女一组，通过三个小游戏，“逐队挑战”“成语接龙”“含情脉脉”来测试下你们之间的...</p>
+				<a href="javascript:Date_show_tc('mfty',867,0,1586);" class="act_btn" onmousedown="send_jy_pv2('|1031989_14|'+HEAD_USER.uid);">免费体验</a>
+			</div>
+											<div class="act_detail">
+				<div class="act_img"><a href="http://date.jiayuan.com/activityreviewdetail.php?id=1584" onmousedown="send_jy_pv2('|1031989_16|'+HEAD_USER.uid);"><img src="./img/1467170616.jpeg" class='activitys' width='378px'></a></div>
+				<h2 class="fn-clear"><span>烘焙搭档</span><em>2091人参加过</em></h2>
+				<p>男女搭配，干活不累！在周五下班后，来约会吧一起做点香喷喷的小点心。体验烘焙乐趣的同时，顺便看看Ta是不是...</p>
+				<a href="javascript:Date_show_tc('mfty',867,0,1584);" class="act_btn" onmousedown="send_jy_pv2('|1031989_14|'+HEAD_USER.uid);">免费体验</a>
+			</div>
+											<div class="act_detail">
+				<div class="act_img"><a href="http://date.jiayuan.com/activityreviewdetail.php?id=1583" onmousedown="send_jy_pv2('|1031989_16|'+HEAD_USER.uid);"><img src="./img/1471426769.jpeg" class='activitys' width='378px'></a></div>
+				<h2 class="fn-clear"><span>八分钟约会-“铁饭碗”专场</span><em>1962人参加过</em></h2>
+				<p>人气满满的8分钟约会这次给大家带来的是“铁饭碗”专场。你是“铁饭碗”相关人士吗？你喜欢“铁饭碗”相关人士...</p>
+				<a href="javascript:Date_show_tc('mfty',867,0,1583);" class="act_btn" onmousedown="send_jy_pv2('|1031989_14|'+HEAD_USER.uid);">免费体验</a>
+			</div>
+											<div class="act_detail">
+				<div class="act_img"><a href="http://date.jiayuan.com/activityreviewdetail.php?id=1567" onmousedown="send_jy_pv2('|1031989_16|'+HEAD_USER.uid);"><img src="./img/1467874427.jpeg" class='activitys' width='378px'></a></div>
+				<h2 class="fn-clear"><span>约会攻略</span><em>2457人参加过</em></h2>
+				<p>男女围坐一圈，依次介绍自己，从第一次约会开始策划，之后策划你们的婚礼,孩子出生后你们的计划，结婚50年你...</p>
+				<a href="javascript:Date_show_tc('mfty',867,0,1567);" class="act_btn" onmousedown="send_jy_pv2('|1031989_14|'+HEAD_USER.uid);">免费体验</a>
+			</div>
+											<div class="act_detail">
+				<div class="act_img"><a href="http://date.jiayuan.com/activityreviewdetail.php?id=1566" onmousedown="send_jy_pv2('|1031989_16|'+HEAD_USER.uid);"><img src="./img/1467170616.jpeg" class='activitys' width='378px'></a></div>
+				<h2 class="fn-clear"><span>烘焙搭档</span><em>2091人参加过</em></h2>
+				<p>男女搭配，干活不累！在周五下班后，来约会吧一起做点香喷喷的小点心。体验烘焙乐趣的同时，顺便看看Ta是不是...</p>
+				<a href="javascript:Date_show_tc('mfty',867,0,1566);" class="act_btn" onmousedown="send_jy_pv2('|1031989_14|'+HEAD_USER.uid);">免费体验</a>
+			</div>
+							</div> 
+	</div>
+	<div class="date_user">
+		<h1 class="date_title">最新会员<a href="http://date.jiayuan.com/userlist.php" _href="http://date.jiayuan.com/userlist.php"  class="change_href_a" onmousedown="send_jy_pv2('|1031989_12|'+HEAD_USER.uid);">更多&nbsp;&gt;</a></h1>
+		<ul class="user_list fn-clear">
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,29844014,0);"  >
+					<img src="./img/129815763d.jpg" class='avater lazy'>
+					<p class="fixPNG">白小小&nbsp;&nbsp;<span>35岁&nbsp;&nbsp;</span>164cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,35201551,0);"  >
+					<img src="./img/132570946d.jpg" class='avater lazy'>
+					<p class="fixPNG">梦&nbsp;&nbsp;<span>28岁&nbsp;&nbsp;</span>170cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,21512224,0);"  >
+					<img src="./img/126924142d.jpg" class='avater lazy'>
+					<p class="fixPNG">ilw&nbsp;&nbsp;<span>29岁&nbsp;&nbsp;</span>165cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,62253437,0);"  >
+					<img src="./img/125363311d.jpg" class='avater lazy'>
+					<p class="fixPNG">佳缘用户&nbsp;&nbsp;<span>35岁&nbsp;&nbsp;</span>167cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,29241579,0);"  >
+					<img src="./img/117303639d.jpg" class='avater lazy'>
+					<p class="fixPNG">爱华&nbsp;&nbsp;<span>32岁&nbsp;&nbsp;</span>165cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,44215725,0);"  >
+					<img src="./img/133655251d.jpg" class='avater lazy'>
+					<p class="fixPNG">小镇姑娘&nbsp;&nbsp;<span>25岁&nbsp;&nbsp;</span>170cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,29918542,0);"  >
+					<img src="./img/121804757d.jpg" class='avater lazy'>
+					<p class="fixPNG">等待花开的日子&nbsp;&nbsp;<span>30岁&nbsp;&nbsp;</span>168cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,97195825,0);"  >
+					<img src="./img/101216093d.jpg" class='avater lazy'>
+					<p class="fixPNG">绿萝&nbsp;&nbsp;<span>29岁&nbsp;&nbsp;</span>160cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,77545678,0);"  >
+					<img src="./img/108986796d.jpg" class='avater lazy'>
+					<p class="fixPNG">酒窝&nbsp;&nbsp;<span>30岁&nbsp;&nbsp;</span>160cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,32447698,0);"  >
+					<img src="./img/130646942d.jpg" class='avater lazy'>
+					<p class="fixPNG">顺其自然&nbsp;&nbsp;<span>34岁&nbsp;&nbsp;</span>170cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,24268420,0);"  >
+					<img src="./img/127513572d.jpg" class='avater lazy'>
+					<p class="fixPNG">一缕阳光&nbsp;&nbsp;<span>33岁&nbsp;&nbsp;</span>162cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,103230207,0);"  >
+					<img src="./img/133170229d.jpg" class='avater lazy'>
+					<p class="fixPNG">方小糖&nbsp;&nbsp;<span>26岁&nbsp;&nbsp;</span>161cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,26211745,0);"  >
+					<img src="./img/127387531d.jpg" class='avater lazy'>
+					<p class="fixPNG">花开花落&nbsp;&nbsp;<span>34岁&nbsp;&nbsp;</span>168cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,82654657,0);"  >
+					<img src="./img/127770501d.jpg" class='avater lazy'>
+					<p class="fixPNG">SEVEN&nbsp;&nbsp;<span>26岁&nbsp;&nbsp;</span>170cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,76530365,0);"  >
+					<img src="./img/115826798d.jpg" class='avater lazy'>
+					<p class="fixPNG">炒炒&nbsp;&nbsp;<span>28岁&nbsp;&nbsp;</span>165cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,84173698,0);"  >
+					<img src="./img/127515515d.jpg" class='avater lazy'>
+					<p class="fixPNG">王&nbsp;&nbsp;<span>28岁&nbsp;&nbsp;</span>160cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,53116925,0);"  >
+					<img src="./img/124001343d.jpg" class='avater lazy'>
+					<p class="fixPNG">麦兜&nbsp;&nbsp;<span>30岁&nbsp;&nbsp;</span>171cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,101644848,0);"  >
+					<img src="./img/113550223d.jpg" class='avater lazy'>
+					<p class="fixPNG">*爱是小微笑~&nbsp;&nbsp;<span>32岁&nbsp;&nbsp;</span>174cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,11649534,0);"  >
+					<img src="./img/123495321d.jpg" class='avater lazy'>
+					<p class="fixPNG">♡每天码字的小胖♥&nbsp;&nbsp;<span>33岁&nbsp;&nbsp;</span>163cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+					<li>
+				<a  href="javascript:Date_show_tc('djhy',1585,4973681,0);"  >
+					<img src="./img/133139918d.jpg" class='avater lazy'>
+					<p class="fixPNG">燕子&nbsp;&nbsp;<span>33岁&nbsp;&nbsp;</span>165cm&nbsp;&nbsp;</p>
+				</a>
+			</li>
+				</ul>
+	</div>
+</div>
+<div class="date_footer">
+	<link rel="stylesheet" type="text/css" href="./css/footer.css">
+	<div class="footer_wrap">
+		<div class="footer_left">
+			<p>投诉、举报邮箱：date_supervise@jiayuan.com  电话：18001270562 15801524316</p>
+			<p><a href="http://www.jiayuan.com/helpcenter/postmail.php" target="_blank">联系客服</a><a href="http://www.jiayuan.com/bottom/index.html" target="_blank">关于我们</a><a href="http://www.jiayuan.com/bottom/connect.html" target="_blank">联系我们</a><a href="http://www.jiayuan.com/bottom/declare.html" target="_blank">注册条款</a><a href="http://www.jiayuan.com/bottom/notice.html" target="_blank">交友信息</a><a href="http://www.jiayuan.com/bottom/private.html" target="_blank">隐私保护</a><a href="http://www.jiayuan.com/helpcenter/" target="_blank">帮助中心</a><a href="http://www.jiayuan.com/guard/" target="_blank">安全中心</a></p>
+		</div>
+		<div class="footer_right fn-clear">
+			<img src="./img/date_code.jpg"><span>关注约会吧官方微信，即送价值300元的免费体验。</span>
+		</div>
+		<div class="clear"></div>
+		<p class="footer_cert">ICP证书：沪B2-20100074  <a href="http://www.jiayuan.com/certificate/zengzhi.html" target="_blank">增值电信业务经营许可证：沪B2-20070313</a>  <a href="http://www.jiayuan.com/certificate/iso.html" target="_blank">ISO9001质量体系认证</a>  <a href="http://www.jiayuan.com/certificate/license.html" target="_blank">沪网文[2012]0720-106号</a><br>©  2003-2016 版权所有  京公网安备110105002124号</p>
+	</div>
+</div>
+<script type="text/javascript" src="./js/foot_common.js"></script>
+</body>
+</html>

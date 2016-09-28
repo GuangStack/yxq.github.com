@@ -1,0 +1,77 @@
+@charset "utf-8";
+body{font:normal 12px/1 "Microsoft Yahei";}
+.calendar-close,.calendar-good,.calendar-bad,.calendar-date i,.calendar-num .sign,.calendar-notice span,.gift-received-btn{background:url(../i/icon.png) no-repeat;}
+.calendar-close,.calendar-good,.calendar-bad,.calendar-date i,.calendar-num .sign,.calendar-notice span,.gift-received-btn{_background:url(../i/icon2.png) no-repeat;}
+/*我的佳缘小弹层*/
+.calendar-box{width:600px;border:1px solid #f9f9f9;background-color:#fff;box-shadow:0 0 5px 1px #ccc;}
+.calendar-main{padding:0 30px;}
+.calendar-up{padding-bottom:15px;}
+.calendar-title{position:relative;line-height:32px;padding-left:30px;border-bottom:1px solid #e9e9e9;font-size:18px;color:#333;}
+.calendar-close{position:absolute;z-index:10;top:13px;right:13px;display:block;width:10px;height:10px;overflow:hidden;background-position:0 -189px;cursor:pointer;}
+/*日期信息*/
+.calendar-up-left{width:390px;}
+.calendar-world{margin-top:15px;font-size:22px;color:#0098c2;}
+.calendar-china{margin:9px 0 8px;color:#333;}
+.calendar-good,.calendar-bad{height:40px;line-height:20px;padding-left:20px;color:#aaa;}
+.calendar-good{background-position:0 0;margin-right:10px}
+.calendar-bad{background-position:0 -42px;}
+.calendar-word{color:#666;}
+.calendar-good p,.calendar-bad p{width:135px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.calendar-good span,.calendar-bad span{padding-left:3px;}
+/*签到按钮*/
+.calendar-signBtn,.calendar-signedBtn,.calendar-signBtn:link,.calendar-signedBtn:link,.calendar-signBtn:visited,.calendar-signedBtn:visited,.calendar-signBtn:active,.calendar-signedBtn:active{display:block;width:138px;height:68px;line-height:68px;margin-top:32px;overflow:hidden;border:1px solid #ffb5bf;background-color:#fef8f8;font-size:22px;color:#ff546a;outline:none;text-align:center;}
+.calendar-signBtn:hover{text-decoration:none;background-color:#ffecee;}
+.calendar-signedBtn,.calendar-signedBtn:link,.calendar-signedBtn:visited,.calendar-signedBtn:hover,.calendar-signedBtn:active{border-color:#fff;background-color:#fff;color:#888;text-decoration:none;cursor:default;}
+/*日历主体*/
+.calendar-body{padding-left:1px;}
+.calendar-date{position:relative;height:32px;line-height:32px;background-color:#ff546a;font-size:18px;color:#fff;text-align:center;}
+.calendar-date i{position:absolute;z-index:2;top:9px;display:block;width:8px;height:14px;overflow:hidden;}
+.calendar-date .arrow-left{left:20px;background-position:0 -155px;}
+.calendar-date .arrow-right{right:20px;background-position:0 -171px;}
+.calendar-week p{float:left;width:76px;height:30px;line-height:30px;margin-right:1px;font-size:14px;color:#000;text-align:center;}
+.calendar-num{overflow:hidden;}
+.calendar-num li{float:left;width:70px;height:44px;overflow:hidden;margin:0 1px 1px 0;padding:2px 3px;background-color:#efefef;}
+.calendar-num .null{background-color:#fff;}
+.calendar-num .sign{background-color:#efefef;background-position:23px -104px;}
+.big-num{margin:8px 0 5px;font-size:18px;color:#666;text-align:center;}
+.small-num{font-size:12px;color:#aaa;text-align:right;}
+.calendar-notice{height:20px;line-height:20px;margin:15px 0 15px 23px;font-size:16px;color:#333;}
+.calendar-notice span{line-height:20px;padding:0 15px 0 20px;background-position:0 -84px;font-size:12px;color:#888;}
+.calendar-notice em{color:#ff546a;}
+
+/*会员俱乐部大弹层*/
+.calendar-big-box{width:902px;margin:0 auto;border:1px solid #f9f9f9;background-color:#fff;box-shadow:0 0 5px 1px #ccc;}
+.calendar-big-left{width:600px;}
+.calendar-big-right{margin-bottom:60px;}
+/*奖励信息*/
+.calendar-gift-title{margin:15px 0;font-size:14px;color:#333;}
+.calendar-gift-box{width:90px;margin-right:1px;text-align:center;}
+.calendar-gift-box dt{width:90px;height:85px;background-color:#ffecb8;font-size:0;}
+.calendar-gift-box dt p{display:inline-block;width:34px;margin:17px 1px 0;padding-top:46px;font:12px/1 "宋体";color:#da6d29;*display:inline;*zoom:1;}
+.gift-bean,.gift-stamp{background:url(../i/gift-icon.png) no-repeat;}
+.gift-bean,.gift-stamp{_background:url(../i/gift-icon2.png) no-repeat;}
+.gift-bean,.gift-bao{background:url(../i/gift-icon_jyb.png) no-repeat;}
+.gift-bean,.gift-bao{_background:url(../i/gift-icon-jyb.png) no-repeat;}
+.gift-bean{background-position:left 0;}
+.gift-stamp{background-position:right 0;}
+.gift-bao{ background-position:right 0;}
+.calendar-gift-box dd p{margin:10px 0 15px;color:#666;}
+.gift-received-btn,
+.gift-receive-btn,
+.gift-unfinished-btn{display:block;width:58px;height:20px;line-height:20px;margin:0 auto;border-width:1px;border-style:solid;font-family:"Microsoft Yahei";text-align:center;outline:none;}
+.gift-received-btn{width:44px;padding-left:14px;border-color:#fff;background-color:#fff;background-position:0 -201px;color:#12ab11;cursor:default;}
+.gift-receive-btn{border-color:#7dd0e7;background-color:#ebfbff;color:#0098c2;}
+.gift-unfinished-btn{border-color:#dadada;background-color:#e4e4e4;color:#888;cursor:default;}
+.gift-received-btn:hover,.gift-receive-btn:hover,.gift-unfinished-btn:hover{text-decoration:none;}
+.gift-receive-btn:hover{background-color:#d7f6ff;}
+.sign-rule{margin-top:60px;}
+.sign-rule dt{margin-bottom:6px;font:14px/1 "Microsoft Yahei";color:#333;}
+.sign-rule-num,.sign-rule dd p{display:block;float:left;font:12px/20px "Microsoft Yahei";color:#666;}
+.sign-rule-num{width:20px;}
+.sign-rule dd p{width:253px;}
+.sign-rule dd p span{color:#ff546a;}
+.sign-rule dd p a{color:#2c81d6;}
+/*节日and周末文字颜色*/
+.calendar-body .red-word{color:#ff8b9b;}
+.calendar-body .fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.calendar-body .fn-clear{zoom:1;}

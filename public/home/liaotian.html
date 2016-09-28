@@ -1,0 +1,468 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>聊天窗口</title>
+<style>
+#template, #temp1,#temp2{display: none};
+</style>
+<script type="text/javascript" src="./js/head_common.js" ></script>
+<script>
+var is_xiaoneng_user=0;
+var is_test_area=0;
+var is_new_member=0;
+document.onkeydown=function(e)  
+{
+	var evt = e || window.event;
+	if ((evt.keyCode==116)|| //F5  
+		(evt.keyCode==122)|| //F11
+		(evt.ctrlKey && evt.keyCode==82)|| //Ctrl+R
+		(evt.ctrlKey && evt.keyCode==84)|| //Ctrl+T
+		(evt.ctrlKey && evt.keyCode==69)|| //Ctrl+E
+		(evt.shiftKey && evt.keyCode==121) //shift+F10  
+		)
+	{
+		if(!e)
+		{
+			evt.keyCode=0;  
+			evt.returnValue=false;
+		}
+		return false;
+	}
+	return true;
+};
+
+var topdomain = window.location.host.match(/[^.]*\.(com|cn|net|org)(\.[^.]*)?/ig);
+if(topdomain) topdomain = topdomain[0];
+else topdomain = document.domain;
+
+var FOOT_IMG_BASE = (window.topdomain=="jiayuan.com"||window.topdomain=="msn.com.cn") ? "http://images1.jyimg.com" : "http://images1."+window.topdomain;
+document.write('<link href="'+FOOT_IMG_BASE+'/w4/webim/chat/style2.css?v=1" rel="stylesheet" type="text/css" />');
+document.write('<script type="text/javascript" src="'+FOOT_IMG_BASE+'/w4/webim/jquery-1.6.1.min.js"></s'+'cript>');
+document.write('<link href="'+FOOT_IMG_BASE+'/w4/webim/client/style/jiaxin_emoticon.css" rel="stylesheet" type="text/css" />');
+document.write('<link href="'+FOOT_IMG_BASE+'/w4/msg/play/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />');
+document.write('<script type="text/javascript" src="'+FOOT_IMG_BASE+'/w4/webim/client/js/jquery.emoticons.js"></s'+'cript>');
+//document.write('<script type="text/javascript" src="'+FOOT_IMG_BASE+'/w4/msg/js/jquery.jplayer.min.js"></s'+'cript>');
+document.write('<script type="text/javascript" src="'+FOOT_IMG_BASE+'/w4/webim/chat/jquery.jplayer.js"></s'+'cript>');
+</script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="./js/dd_belatedpng.js"></script>
+<script>
+DD_belatedPNG.fix('img, a, p, li, body, h3, .zxh_layer2_picBorder');
+</script>
+<![endif]-->
+</head>
+
+<body style="height:100%;">
+<div class="web_im">
+	<div class="web_im_left">
+		<ul></ul>
+	</div>
+	<div class="web_im_rightborder"></div>
+	<div class="web_im_right"></div>
+	
+	<div class="tishilayer">
+		<ul>
+			<li class="xuanzhong" t="0">
+				<a href="javascript:void(0);">按Enter建发送消息</a>
+			</li>
+			<li t="1">
+				<a href="javascript:void(0);">按Ctrl+Enter建发送消息</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div id="template">
+	<ul>
+	<li id="temp1" class="web_im_liactive ck_select">
+		<a class="web_im_online_plat" target="_blank" href="javascript:void(0);">&nbsp;</a>
+		<div class="web_im_pic"><a target="_blank"><img /></a></div>
+		<a class="web_im_picborder" href="javascript:void(0);">&nbsp;</a>
+		<div class="web_im_name">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td><div class="web_im_nickname"></div></td>
+					<td><div class="im_samecity_liuyanshu"></div><a href="javascript:void(0);" class="web_im_left_close">&nbsp;</a></td>
+				</tr>
+			</table>
+		</div>
+	</li>
+	</ul>
+	<div class="web_im_rightdiv ck_select" id="temp2">
+		<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr><td height="90px">
+			<div class="web_im_right_top">
+				<div class="web_im_right_topinfo">
+					<a target="_blank" class="web_im_right_pic"><img /></a>
+					<a target="_blank"><div class="web_im_right_picborder"></div></a>
+					<div class="web_im_right_topname">
+						<table border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td><a href="#" target="_blank"><div class="web_im_right_nickname"></div></a></td>
+								<td><div class="hascamera" title="视频聊天"></div></td>
+								<td>
+								<a href="#" target="_blank" class="web_im_right_topnametext" title="亲密度等级"></a>
+								<a href="javascript:void(0);" class="act_friend">&nbsp;</a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="web_im_top_cxdj integrity">
+						<dt>诚信等级：</dt>
+						<dd><ul class="web_im_cxdj_img"></ul></dd>
+					</div>
+					<div class="web_im_top_qmendinfo">（会员签名）或者（会员信息）</div>
+					<div class="web_im_top_jxpicture"></div>
+					<div class="web_im_top_down"><a href="#" target="_blank">&nbsp;</a></div>
+				</div>
+			</div>
+		</td></tr>
+		<tr><td>
+			<div class="web_im_tips"></div>
+			<div class="web_im_main">
+				<div class="web_im_news"><p>&nbsp;</p></div>
+			</div>
+		</td></tr>
+		<tr><td height="160px">
+			<div class="web_im_right_bottom">
+			<div class="web_im_right_bottomicon">
+				<a class="web_im_right_bottombq" href="javascript:void(0);" title="表情">&nbsp;</a>
+				<a class="web_im_right_bottomly" href="javascript:void(0);" title="找话题">&nbsp;</a>
+				<a class="web_im_right_bottomtp" href="javascript:void(0);" title="发图片">&nbsp;</a>
+                <a class="web_im_right_bottomsp" href="javascript:void(0);" title="视频聊天">&nbsp;</a>
+                <a class="web_im_right_bottomlt" href="javascript:void(0);" title="视频留言">&nbsp;</a>
+				<a target="_blank" class="web_im_right_bottomtext act_jubao" href="javascript:void(0);">举报</a>
+				<a target="_blank" class="web_im_right_bottomtext2 act_black" href="javascript:void(0);">阻止</a>
+			</div>
+			<div class="web_im_right_bottomtextareadiv">
+				<textarea name="" cols="" rows="" class="web_im_right_bottomtextarea"></textarea>
+			</div>
+			<div class="web_im_right_bottombutton">
+				<a href="javascript:void(0);" class="web_im_right_bottomfs">&nbsp;</a>
+				<a href="javascript:void(0);" class="web_im_right_bottomfs2">&nbsp;</a>
+				<span class='fasongtishi'></span>
+			</div>
+			</div>
+		</td></tr>
+		</table>
+	</div>
+</div>
+<div class="web_im_full_pic">
+	<a class="web_im_close_pic" href="javascript:void(0);">&nbsp;</a>
+</div>
+
+<div class="hiddenlayer">
+	<div class="huidalayer">
+		<div class="huidalayertop">
+			<a href="javascript:void(0);" class="huidalayertopclose">&nbsp;</a>
+		</div>
+		<div class="huidalayermid">
+			<div class="huidalayerwenti">
+				<img src="http://images1.jyimg.com/w4/webim/chat/i2/wen.png"/>
+				<span></span>
+			</div>
+			<div class="huidalayerhuidadiv">
+				<textarea name="" cols="" rows="" class="huidalayertextarea"></textarea>
+			</div>
+			<table width="345" border="0" cellspacing="0" cellpadding="0" style="margin:0 auto;">
+				<tr>
+					<td width="25">
+						<input name="" type="checkbox" value="" class="is_share"/>
+					</td>
+					<td width="130">公开到佳信个人资料中</td>
+					<td width="100">
+						<div class="huidalayergongkai"></div>
+					</td>
+					<td width="30" class="huidalayerzishu">140</td>
+					<td>
+						<div class="masked-relative">
+							<a href="javascript:void(0);" class="huidalayerhuifu">&nbsp;</a>
+							<div class="huidalayerhuifu_tishi"><p></p></div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="huidalayerbot"></div>
+		<div class="huidahelplayer">
+			<div class="huidahelplayertop">
+				<a href="javascript:void(0);" class="huidahelplayertopclose">&nbsp;</a>
+			</div>
+			<div class="huidahelplayertext">佳信个人资料是在用户在佳信PC客户端上看到的你的个人资料。<br>回答公开到佳信个人资料中，给大家展示更生动的你自己，让缘分快快到来。</div>
+			<div class="huidahelplayerpc">
+				<a href="http://im.jiayuan.com" target="_blank">下载佳信PC客户端&nbsp;&gt;&gt;</a>
+			</div>
+		</div>
+	</div>
+	<div class="web_im_tishi" id="web_im_tishi">
+		<div class="web_im_tishitxet"></div>
+		<a href="javascript:void(0);" class="web_im_tishiclose">&nbsp;</a>
+	</div>
+	<div class="jieshaoxinlayer chatnopay">
+		<div class="jieshaoxinlayer_top">
+			<a href="javascript:void(0);" class="jieshaoxinlayer_topclose">&nbsp;</a>
+		</div>
+		<div class="jieshaoxinlayer_body">
+			<b>免打扰提示</b>
+			<p>对方还不认识你，暂时无法主动发起聊天，建议你先写封信介绍一下自己！</p>
+			<a href="#" class="jieshaoxinlayer_geitaxin" target="_blank">&nbsp;</a>
+		</div>
+	</div>
+	<div class="jieshaoxinlayer chattoself">
+		<div class="jieshaoxinlayer_top">
+			<a href="javascript:void(0);" class="jieshaoxinlayer_topclose">&nbsp;</a>
+		</div>
+		<div class="jieshaoxinlayer_body">
+			<b>这不是捣乱吗？</b>
+			<p>你咋个还想跟自己聊天呢，在这里就是要找对象的撒~嘿嘿……</p>
+			<a href="javascript:void(0);" class="jieshaoxinlayer_close" target="_blank">&nbsp;</a>
+		</div>
+	</div>
+	<div class="huidalayer2">
+		<div class="huidalayertop">
+			<a href="javascript:void(0);" class="huidalayertopclose">&nbsp;</a>
+		</div>
+		<div class="huidalayermidhdcg">
+			<img src="./img/hdcg.gif" width="110" height="40"/>
+		</div>
+		<div class="huidalayerbot"></div>
+	</div>
+	<div class="web_im_pic_loading" style="width:58px; height:10px;">
+		<img src="./img/loading.gif" />
+	</div>
+	<div class="zxh_layer1">
+		<div class="zxh_layer1_top">
+			<a href="javascript:void(0);" class="zxh_layer_close">&nbsp;</a>
+		</div>
+		<div class="zxh_layer1_body">
+			<table border="0" cellspacing="0" cellpadding="0" style="margin-bottom:7px;">
+				<tr>
+					<td class="zhx_layer_1">想和“会员昵称”交换的真心话</td>
+					<td><img src="./img/zhx_layer_2.jpg" width="10" height="22"></td>
+				</tr>
+			</table>
+			<div class="zhx_layer_input1">
+				<input name="" type="text" class="zhx_input_color1" style="" value="热门问题：">
+			</div>
+			<div class="zhx_layer_2">
+				<img src="./img/zhx_layer_3.jpg" width="86" height="22">
+			</div>
+			<div class="zhx_layer_input2">
+				<label for="textarea"></label>
+				<textarea name="textarea" id="textarea" cols="45" rows="2" class="zhx_input_color2" style="">您必须回答相同的问题后 才能跟她交换秘密哦~~</textarea>
+			</div>
+			<div class="zhx_layer_button">
+				<input name="" type="button" value="提交" class="zhx_layer_tj">
+			</div>
+		</div>
+	</div>
+	<div class="zxh_layer2 zxh_notready">
+		<div class="zxh_layer2_top">
+			<a href="javascript:void(0);" class="zxh_layer_close">&nbsp;</a>
+		</div>
+		<div class="zxh_layer2_body">
+	    	<div class="zxh_layer2_wenti">
+	    		<img src="./img/zxh_wen.png" width="20" height="24" style="vertical-align:middle; margin-right:5px;">
+	    		<span class="zxh_question"></span>
+	    	</div>
+	    	<div class="zxh_layer2_huifu">
+	        	<div class="zxh_layer2_pic" style="float:left;">
+	        		<img src="./img/pic2.jpg" width="31" height="31" style="width:31px;height:31px;">
+	        		<div class="zxh_layer2_picBorder"></div>
+	        	</div>
+	            <div class="zxh_layer2_jhzxh">想知道TA的真心话吗？交换真心话后才可看见喔！</div>
+	        </div>
+	        <div class="zxh_layer2_huida">
+	        	<div class="zxh_layer2_pic" style="float:right; margin-left:10px;">
+	        		<img src="./img/pic2.jpg" width="31" height="31" style="width:31px;height:31px;">
+	        		<div class="zxh_layer2_picBorder"></div>
+	        	</div>
+	            <div class="zxh_layer2_input">
+	            	<textarea name="" cols="" rows="" style="width:300px; height:45px; border:none; background:none;"></textarea>
+	            </div>
+	        </div>
+	        <div class="zhx_layer2_button">
+	        	<input name="" type="button" value="提交" class="zhx_layer_tj">
+	        </div>
+		</div>
+	</div>
+
+	<div class="zxh_layer2 zxh_isready">
+		<div class="zxh_layer2_top">
+			<a href="javascript:void(0);" class="zxh_layer_close">&nbsp;</a>
+		</div>
+		<div class="zxh_layer2_body">
+			<div class="zxh_layer2_wenti">
+				<img src="./img/zxh_wen.png" width="20" height="24" style="vertical-align:middle; margin-right:5px;">
+				<span class="zxh_question"></span>
+			</div>
+			<div class="zxh_layer2_huifu">
+				<div class="zxh_layer2_pic" style="float:left; ">
+					<img src="./img/pic2.jpg" width="31" height="31" style="width:31px;height:31px;">
+					<div class="zxh_layer2_picBorder"></div>
+				</div>
+				<div class="zxh_layer2_wdda">
+					<div class="zxh_layer2_wdda2">
+						<div class="zxh_layer2_wddaDiv"></div>
+						<div class="zxh_layer2_wddaZanDiv"><a href="javascript:void(0);" class="zxh_layer2_wddaZan">&nbsp;</a></div>
+						<div style="clear:both;"></div>
+					</div>
+				</div>
+			</div>
+			<div class="zxh_layer2_huida">
+				<div class="zxh_layer2_pic" style="float:right;">
+					<img src="./img/pic2.jpg" width="31" height="31" style="width:31px;height:31px;">
+					<div class="zxh_layer2_picBorder"></div>
+				</div>
+				<div class="zxh_layer2_tdhd">
+					<div class="zxh_layer2_tdhd2"><p></p></div>
+				</div>
+			</div>
+			<div class="zxh_layer2_jxjhDiv">
+				<input name="" type="button" class="zxh_layer2_jxjh" value=" ">
+			</div>
+		</div>
+	</div>
+
+	<div class="zxh_layer2 zxh_isdel">
+		<div class="zxh_layer2_top">
+			<a href="javascript:void(0);" class="zxh_layer_close">&nbsp;</a>
+		</div>
+		<div class="zxh_layer2_body">
+			<div class="zxh_layer2_wenti">
+				<img src="./img/zxh_wen.png" width="20" height="24" style="vertical-align:middle; margin-right:5px;">
+				<span class="zxh_question"></span>
+			</div>
+			<div class="zxh_layer2_huifu">
+				<div class="zxh_layer2_pic" style="float:left; ">
+					<img src="./img/pic2.jpg" width="31" height="31" style="width:31px;height:31px;">
+					<div class="zxh_layer2_picBorder"></div>
+				</div>
+				<div class="zxh_layer2_wdda">
+					<div class="zxh_layer2_wdda2">
+						<div class="zxh_layer2_wddaDiv"></div>
+						<div class="zxh_layer2_wddaZanDiv"><a href="javascript:void(0);" class="zxh_layer2_wddaZan">&nbsp;</a></div>
+						<div style="clear:both;"></div>
+					</div>
+				</div>
+			</div>
+			<div class="zxh_layer2_huida">
+				<div class="zxh_layer2_pic" style="float:right;">
+					<img src="./img/pic2.jpg" width="31" height="31" style="width:31px;height:31px;">
+					<div class="zxh_layer2_picBorder"></div>
+				</div>
+				<div class="zxh_layer2_tdhd">
+					<div class="zxh_layer2_tdhd2"><p></p></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="doc443" id="chat_charge_option" style="display:none;">
+	<div class="tc_top"><a href="javascript:void(0);" class="close" id="close_chat_charge_option_link"></a></div>
+    <div class="tc_body">
+		<div class="title">佳缘宝不足 请先充值！</div>
+		<div class="tc_shoufei1"><a  target="_blank">金钻会员，可向全站异性发起免费聊天</a></div>
+		<div class="tc_shoufei2"><a  target="_blank">网上银行</a><a  target="_blank">支付宝</a><a  target="_blank">手机充值卡</a>等方式，购买佳缘宝</div>
+		<!--div id="mobilepay_notice" class="tc_shoufei3"><a id="show_unicom_code_link">联通手机</a><a id="show_mobile_code_link">移动手机</a></div-->
+	<div id="mobile_code_show" style="display:none;">
+		<div class="tc_shoufei4">移动手机<a  class="back_mobilepay_link">（不是移动手机？）</a><span>资费2元</span></div>
+		<div class="tc_duanxin"><select id="mobile_code_select" name="" class="tc_dq">
+			
+		</select>地区用户，请发送短信<span id="mocode_mobile">020</span>到<span id="longcode_mobile">1065800885715</span></div>
+		<div class="tc_passage"><span>输入佳缘邮票充值密码</span>
+		  <input name="input" id="mobileCode" type="text" class="tc_mima" />
+		  <a href="javascript:void(0);" id="verifyMobileCodeLink"><span></span></a>
+		</div>
+	</div>
+
+	<div id="unicom_code_show" style="display:none;">
+		<div class="tc_shoufei4">联通手机<a class="back_mobilepay_link">（不是联通手机？）</a><span>资费2元</span></div>
+		<div class="tc_duanxin">
+			<select id="unicom_code_select" name="" class="tc_dq">
+				
+			</select>地区用户，请发送短信<span id="mocode_unicom">020</span>到<span id="longcode_unicom">1065800885715</span></div>
+		<div class="tc_passage"><span>输入佳缘邮票充值密码</span>
+		  <input name="input" id="unicomCode" type="text" class="tc_mima" />
+		  <a id="verifyUnicomCodeLink"><span></span></a>
+		</div>
+	</div>
+  	</div>
+  	<div class="tc_bottom"></div>
+</div>
+
+<!--弹层1  width:450px; height:330px;-->
+<div class="jinzuan" id="jyim_jinzuan_new" style="display:none">
+<div class="jinzuan_top"><a  class="close"></a></div>
+	<div class="jinzuan_title"> 只有钻石会员才能发起聊天！</div>
+    <div class="jinzuan_stye">你也可以试试下面方法：</div>
+    <div class="jinzuan_text">
+      <span class="text_fen">先给TA写信</span>，对方给你<span class="text_fen">回信</span>后，即可以向对方发起<span class="text_fen">免费聊天</span>。<br />
+        交友讲究循序渐进，先写封信问候下，熟悉之后再聊天才显得不唐突。<br />
+        成功配对的可能性也会越高。
+    </div>
+	<div class="jinzuan_stye">您还可以：</div>
+    <div class="jinzuan_bot">
+			    <a class="botton_n2 botton_n2_jxb"></a><a class="botton_n1 botton_n1_jxb"></a>
+	            <div class="clear_line"></div>
+    </div>
+		<div class="jinzuan_buchong">4个佳缘宝可与当前用户聊1次，之后与Ta再聊天或写信都不收费。<br />
+    如果对方10分钟未回复，我们将为您再补发1封信给对方。确保消息到达。</div>
+	</div>
+<!--结束-->
+
+<!--弹层2   width:450px; height:330px;-->
+<div class="jinzuan" id="jyim_jinzuan_tuiguang" style="display:none">
+<div class="jinzuan_top"><a  class="close"></a></div>
+	<div class="jinzuan_title"> 新聊天，新体验，尽在金钻会员！</div>
+    <div class="jinzuan_stye">新聊天介绍：</div>
+    <div class="jinzuan_text">老的聊天包月需要先邀请，对方确认后才能发起聊天，金钻会员所附赠的聊天服务，无需邀请就能直接发起，对方收到可直接回复，更加即时高效的与在线异性联络。   </div>
+	<div class="jinzuan_stye">您还可以：</div>
+    <div class="jinzuan_bot">
+	    	    <a class="botton_n3 botton_n3_jxb" ></a><a class="botton_n4 botton_n4_jxb" ></a><a class="botton_n5 botton_n5_jxb" ></a>
+	            <div class="clear_line"></div>
+    </div>
+		<div class="jinzuan_buchong">4个佳缘宝可与当前用户聊1次，之后与Ta再聊天或写信都不收费。<br />
+    如果对方10分钟未回复，我们将为您再补发1封信给对方。确保消息到达。</div>
+	</div>
+
+<script type="text/javascript" src="http://www.jiayuan.com/msg/intercept/mobile_paycode.html"></script>
+<script>
+(function($){
+	$.fn.simpleDialog = function(){
+		$.createDialogMask($(this));
+	};
+	
+	$.fn.simpleDialogClose = function(){
+		$.removeDialogMask($(this));
+	};
+	
+	$.createDialogMask = function(element){
+		$("<div id=\"dialogmask\" class=\"loadmask\" style=\"100%;height:100%\"></div>").appendTo("body");
+		
+		var scrollMask = function(){
+			element.css("top", ($(document).scrollTop() + $(window).height()/2 -  element.height()/2) + "px");
+			element.css("left", ($(document).scrollLeft() + $(window).width()/2 -  element.width()/2) + "px");
+		};
+		
+		element.addClass("loadmask-msg");
+		scrollMask();
+		element.show();
+		
+		$(window).scroll(scrollMask);
+		$(window).resize(scrollMask);
+	};
+	
+	$.removeDialogMask = function(element){
+		$("#dialogmask").remove();
+		element.removeClass("loadmask-msg");
+		element.hide();
+	};
+})(jQuery);
+document.write('<script src="http://webim.jiayuan.com/pop_template.php?v=1"></s' + 'cript>');
+document.write('<script type="text/javascript" src="'+FOOT_IMG_BASE+'/w4/webim/chat/jyim_chat_win2.js?v=20120628"></s'+'cript>');
+</script>
+</body>
+</html>

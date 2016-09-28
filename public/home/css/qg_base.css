@@ -1,0 +1,66 @@
+/*-----------------------------------------------------------------------------------------
+
+	*Filename:  base
+    *function: 重设浏览器基础样式(默认样式)
+	*Author  LiuLeian
+	*Version 1.0(2015-03-26 14:30)
+
+--------------------------------------------------------------------------------------------*/
+
+@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html{color:#655d59; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;}
+body{background:url(../images/qg_index_01.jpg) repeat-y top center;}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+/* body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,img,span,pre,code,form,p,a,fieldset,legend,textarea,blockquote,th,td,hr{margin:0; padding:0; border:0;} */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, input, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, i, center, dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, audio, canvas, details, figcaption,figure, footer, header, hgroup, mark, menu, meter, nav,output, progress, section, summary, time, video {margin:0; padding:0; border:0; outline:0; vertical-align:baseline; }
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,button,input,select,textarea{font-family: Microsoft YaHei; font-size:14px; color:#655d59;}
+input,select,textarea{font-size:100%;}
+
+/* 重设 HTML5 标签 */
+article,aside,figure,footer,header,hgroup,nav,section,menu,details,figcaption,blockquote,dialog{display:block;}
+/*input[type="submit"], input[type="button"], button {padding:0;margin:0;}*/
+
+/* 去掉列表前的标识 */
+ol,ul,li,dl{list-style:none;}
+
+/* 垂直对齐方式 */
+input,select,a img{vertical-align:middle;}
+
+/* IE bug fixed:th不继承text-align*/
+th{text-align:inherit;}
+fieldset,img{border:0;}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe{display:block;}
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:500;}
+
+/* 链接默认状态  */
+a{color:#333; text-decoration:none;}  /* 默认不显示下划线，保持页面简洁 */
+a:hover{text-decoration:underline;}   /* 让链接在 hover 状态下显示下划线 */
+
+
+/* 选择用到的设置样式 -------------------------------------------------------------------*/
+
+/* 隐藏, 通常用来与 JS 配合 */
+.fn-hide1{display:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

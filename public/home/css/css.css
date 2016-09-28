@@ -1,0 +1,38 @@
+
+
+/*.clearfloat{height:0;font-size:1px;clear:both;line-height:0;}*/
+
+#container{width:1000px; height:400px; text-align:left; margin:0 auto; position:relative;}
+
+
+.left{ width:1000px; height:400px; position:absolute; left:0; top:0;}
+/*.s-t{ width:100%; padding-bottom:10px;}*/
+.s-c{ width:100%;}
+/*.s-c h4{ font-size:14px; font-weight:normal; padding-bottom:9px;}*/
+.s-c .pics{ width:1000px; float:left;}
+.s-c .p1 img{ width:100%;}
+/*.s-c .s-detail{ width:285px; float:left; display:inline; margin-left:7px;}
+.cnt{ text-indent:2em; line-height:18px;}*/
+
+
+
+.right{ width:183px; height:397px; padding-top:3px; position:absolute; right:22px; top:0;}
+/*上下按钮样式*/
+.slide-pic { padding:0; HEIGHT: auto}
+.slide-pic A#prev {DISPLAY: block; BACKGROUND: url(../images/slide.png) no-repeat; MARGIN:0; OVERFLOW: hidden; WIDTH: 183px; TEXT-INDENT: -9999em; HEIGHT: 14px; outline: none}
+.slide-pic A#next {DISPLAY: block; BACKGROUND: url(../images/slide.png) no-repeat; MARGIN:0; OVERFLOW: hidden; WIDTH: 183px; TEXT-INDENT: -9999em; HEIGHT: 14px; outline: none}
+.slide-pic A#prev {BACKGROUND-POSITION: center 0px}
+.slide-pic A#next {BACKGROUND-POSITION: center -20px}
+.slide-pic A#prev:hover {BACKGROUND-POSITION: center -40px;}
+.slide-pic A#next:hover {BACKGROUND-POSITION: center -60px;}
+.slide-pic A.gray#prev {BACKGROUND-POSITION: center -80px}
+.slide-pic A.gray#next {BACKGROUND-POSITION: center -100px}
+/*小图片*/
+.slide-pic .pic-container {MARGIN: 3px 0px; OVERFLOW: hidden; WIDTH: 183px; HEIGHT: 360px;}
+.slide-pic UL {WIDTH: 183px}
+.slide-pic UL LI {PADDING-BOTTOM: 6px;_PADDING-BOTTOM: 3px; PADDING-TOP: 6px; CURSOR: pointer;}
+.slide-pic UL LI P {BORDER: #fff 4px solid; OVERFLOW: hidden; WIDTH: 175px;  HEIGHT: 70px;}
+.slide-pic UL LI.hover P {BORDER-COLOR: #bbbbbb;}
+.slide-pic UL LI P IMG {WIDTH: 175px; HEIGHT: 70px}
+.slide-pic UL LI.cur P {BORDER-LEFT-COLOR: #2c2c2c! important; BORDER-BOTTOM-COLOR: #2c2c2c! important; BORDER-TOP-COLOR: #2c2c2c! important; BORDER-RIGHT-COLOR: #2c2c2c! important}
+.slide-pic UL LI .date {MARGIN-TOP: -20px; DISPLAY: block; Z-INDEX: 1; BACKGROUND: #fff; WIDTH: 140px; COLOR: #000; LINE-HEIGHT: 20px; POSITION: static; HEIGHT: 20px; TEXT-ALIGN: center;filter:alpha(opacity=20);-moz-opacity:0.5;-khtml-opacity: 0.5; opacity: 0.5;}

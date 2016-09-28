@@ -1,0 +1,10 @@
+/* footer */
+.date_footer{height:270px;padding-top:30px;background-color:#555;}
+.date_footer .footer_wrap{width:1200px;margin:0 auto;}
+.date_footer .footer_left{float:left;width:590px;margin:0 20px 0 85px;padding:8px 0;border-right:1px solid #898989;font:14px/40px 'SimSun';color:#fff;text-align:center;_display:inline;}
+.date_footer .footer_left a{margin:0 7px;color:#fff;}
+.date_footer .footer_right{float:left;height:96px;}
+.date_footer .footer_right img{float:left;margin-right:5px;}
+.date_footer .footer_right span{float:left;height:26px;padding:35px 0;font:14px/26px 'SimSun';color:#fff;}
+.date_footer .footer_cert{padding-top:22px;font:14px/30px 'SimSun';color:#aaa;text-align:center;}
+.date_footer .footer_cert a{color:#aaa;}

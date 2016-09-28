@@ -1,0 +1,10 @@
+/*骞垮憡鍏敤*/
+.jy_ad {position: relative; overflow: hidden;}
+.jy_ad ul {position: absolute; top: 0; left: 0; overflow: hidden;}
+.jy_ad li {float: left; display: none;}
+
+
+/* 骞垮憡灏哄 */
+.size_250_250, .size_250_250 img {width: 250px; height: 250px;}
+.size_300_300, .size_300_300 img {width: 300px; height: 300px;}
+
